@@ -27,8 +27,8 @@ const getBudgetLabel = (
 ): string => {
   if (budget === null) return "· Unlimited";
   const formattedBudget = formatNumberWithCommas(budget, budgetDecimals);
-  if (usesTeamMemberBudget) return `· ${memberSpendText} of $${formattedBudget} (team member)`;
-  return `of $${formattedBudget}`;
+  if (usesTeamMemberBudget) return `· ${memberSpendText} of ¥${formattedBudget} (team member)`;
+  return `of ¥${formattedBudget}`;
 };
 
 const getMeterValueText = (
@@ -39,7 +39,7 @@ const getMeterValueText = (
 ): string => {
   if (!hasBudget || budget === null) return "";
   const formattedBudget = formatNumberWithCommas(budget, budgetDecimals);
-  return `${meterSpendText} of $${formattedBudget}`;
+  return `${meterSpendText} of ¥${formattedBudget}`;
 };
 
 export function SpendBudgetCell({
@@ -60,8 +60,8 @@ export function SpendBudgetCell({
   const hasBudget = typeof budget === "number" && budget > 0;
   const pct = hasBudget ? (meterSpendValue / budget) * 100 : 0;
 
-  const spendText = spendValue > 0 ? getSpendString(spendValue, spendDecimals) : "$0.00";
-  const memberSpendText = memberSpendValue > 0 ? getSpendString(memberSpendValue, spendDecimals) : "$0.00";
+  const spendText = spendValue > 0 ? getSpendString(spendValue, spendDecimals) : "¥0.00";
+  const memberSpendText = memberSpendValue > 0 ? getSpendString(memberSpendValue, spendDecimals) : "¥0.00";
   const budgetLabel = getBudgetLabel(budget, usesTeamMemberBudget, memberSpendText, budgetDecimals);
   const meterSpendText = usesTeamMemberBudget ? `team member spend ${memberSpendText}` : spendText;
   const meterValueText = getMeterValueText(hasBudget, budget, meterSpendText, budgetDecimals);

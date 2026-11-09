@@ -423,7 +423,7 @@ const ModelInfoEditForm: React.FC<ModelInfoEditFormProps> = ({
 
   const pricingField = (name: TouchedPricingField, label: string, placeholder: string, description?: string) =>
     isEditing ? (
-      <FormField control={form.control} name={name} label={label} description={description}>
+      <FormField control={form.control} name={name} label={`${label} · ${localModelData.model_info?.pricing_currency || "USD"}`} description={description}>
         {({ value, onChange, ...control }) => (
           <NumericalInput
             {...control}

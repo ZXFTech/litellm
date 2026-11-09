@@ -196,12 +196,14 @@ export const getRequestLogsTableColumns = ({
   {
     id: "spend",
     accessorKey: "spend",
-    header: ({ column }) => <DataTableSortHeader column={column} title="Cost" variant="dropdown-tristate" />,
+    header: ({ column }) => <DataTableSortHeader column={column} title="Cost (CNY)" variant="dropdown-tristate" />,
     size: 110,
     enableSorting: true,
     meta: { numeric: true, skeleton: "twoLine" },
     cell: ({ row }) => {
       const log = row.original;
+      const pricing = log.metadata?.spend_logs_metadata;
+      if (pricing && typeof pricing === "object" && "pricing_status" in pricing && pricing.pricing_status === "unconfirmed") return <span title="Historical usage quantity was not retained; excluded from confirmed totals">未确认</span>;
       const mcpCount = log.mcp_tool_call_count || 0;
       const mcpSpend = log.mcp_tool_call_spend || 0;
       const isMultiCallSession = (log.session_total_count || 1) > 1;
@@ -215,7 +217,7 @@ export const getRequestLogsTableColumns = ({
 
       return (
         <div className="flex flex-col items-end">
-          {spend ? <CellTooltip content={`$${String(spend)}`} trigger={money} /> : money}
+          {spend ? <CellTooltip content={`¥${String(spend)}`} trigger={money} /> : money}
           {sessionTotalSpend != null && <span className="text-[10px] text-muted-foreground">session total</span>}
           {mcpCount > 0 && mcpSpend > 0 && (
             <span className="text-[10px] text-warning">

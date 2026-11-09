@@ -1,0 +1,38 @@
+{
+  "currency": "CNY",
+  "version": "minimax-cn-2026-11-09",
+  "source": "https://platform.minimax.cn/docs/pricing/overview",
+  "threshold_interpretation": "512k = 512000 total input tokens, following LiteLLM's existing threshold convention; the vendor page does not disambiguate decimal vs binary k.",
+  "models": {
+    "MiniMax-M3": {
+      "deployment_id": "e57dc17e-4964-4ca7-9ea1-e97acbfb88a7",
+      "input_cost_per_token": 0.0000021,
+      "output_cost_per_token": 0.0000084,
+      "cache_read_input_token_cost": 0.00000042,
+      "cache_creation_input_token_cost": 0.0000021,
+      "input_cost_per_token_above_512k_tokens": 0.0000042,
+      "output_cost_per_token_above_512k_tokens": 0.0000168,
+      "cache_read_input_token_cost_above_512k_tokens": 0.00000084,
+      "cache_creation_input_token_cost_above_512k_tokens": 0.0000042,
+      "input_cost_per_token_priority": 0.00000315,
+      "output_cost_per_token_priority": 0.0000126,
+      "cache_read_input_token_cost_priority": 0.00000063,
+      "cache_creation_input_token_cost_priority": 0.00000315,
+      "input_cost_per_token_above_512k_tokens_priority": 0.0000063,
+      "output_cost_per_token_above_512k_tokens_priority": 0.0000252,
+      "cache_read_input_token_cost_above_512k_tokens_priority": 0.00000126,
+      "cache_creation_input_token_cost_above_512k_tokens_priority": 0.0000063
+    },
+    "MiniMax-M3.1-Flash": {
+      "deployment_id": "fd9ae850-2dbd-449d-8a19-0f74de1cbe28",
+      "input_cost_per_token": 0.000001,
+      "output_cost_per_token": 0.000004,
+      "cache_read_input_token_cost": 0.0000001,
+      "cache_creation_input_token_cost": 0.000001
+    },
+    "image-01": {
+      "deployment_id": "743642ab-5fe5-473f-935b-e7a6aaac77ec",
+      "output_cost_per_image": 0.025
+    }
+  }
+}

@@ -1,0 +1,66 @@
+name: llm-gateway
+
+services:
+  gateway:
+    image: ghcr.io/berriai/litellm-database:v1.108.3@sha256:aecfcc459b5af208f04b8e916c9912cc3001798e013b4874be1831c20e4a2c26
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4000:4000"
+    environment:
+      DATABASE_URL: postgresql://litellm:${POSTGRES_PASSWORD:?Run gateway.ps1 start first}@db:5432/litellm
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:?Run gateway.ps1 start first}
+      LITELLM_SALT_KEY: ${LITELLM_SALT_KEY:?Run gateway.ps1 start first}
+      UI_USERNAME: admin
+      UI_PASSWORD: ${UI_PASSWORD:?Run gateway.ps1 start first}
+      STORE_MODEL_IN_DB: "True"
+      LITELLM_UI_PATH: /app/cny-ui
+      LITELLM_LOG: INFO
+    command: ["--config", "/app/local-config.yaml", "--host", "0.0.0.0", "--port", "4000", "--num_workers", "1"]
+    volumes:
+      - ./config.yaml:/app/local-config.yaml:ro
+      - ./gateway_minimax.py:/app/gateway_minimax.py:ro
+      - ./gateway_pricing.py:/app/gateway_pricing.py:ro
+      - ./pricing.json:/app/pricing.json:ro
+      - ../litellm/litellm_core_utils/llm_cost_calc/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/llm_cost_calc/utils.py:ro
+      - ./cny-ui:/app/cny-ui:ro
+      - ../litellm/types/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/types/utils.py:ro
+      - ../litellm/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/utils.py:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request; r=json.load(urllib.request.urlopen('http://127.0.0.1:4000/health/readiness',timeout=5)); raise SystemExit(0 if r.get('status')=='healthy' and r.get('db')=='connected' else 1)"]
+      interval: 15s
+      timeout: 8s
+      retries: 8
+      start_period: 120s
+    stop_grace_period: 45s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  db:
+    image: postgres:18.6@sha256:979bccfde35445db618c65107d27d08c6c21339d8dc3ad4c830c6633947be0e4
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run gateway.ps1 start first}
+      POSTGRES_DB: litellm
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litellm -d litellm"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  postgres-data:

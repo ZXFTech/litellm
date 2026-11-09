@@ -1,0 +1,6 @@
+.env
+.local/
+backups/
+!config.yaml
+
+cny-ui/

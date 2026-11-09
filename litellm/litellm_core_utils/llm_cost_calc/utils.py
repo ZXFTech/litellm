@@ -2063,7 +2063,11 @@ class CostCalculatorUtils:
         resolved_quality: Final = (
             quality or completion_response.quality or _requested_image_param(optional_params, "quality") or "standard"
         )
-        resolved_n: Final = n if n is not None else (len(completion_response.data) if completion_response.data else 0)
+        resolved_n: Final = (
+            len(completion_response.data or [])
+            if custom_llm_provider in litellm._custom_providers or n is None
+            else n
+        )
         pricing: Final = deployment_pricing(model_info)
 
         if custom_llm_provider == litellm.LlmProviders.VERTEX_AI.value:

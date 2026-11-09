@@ -4038,6 +4038,7 @@ def get_optional_params_image_gen(
         custom_llm_provider == "openai"
         or custom_llm_provider == "azure"
         or custom_llm_provider in litellm.openai_compatible_providers
+        or custom_llm_provider in litellm._custom_providers
     ):
         optional_params = non_default_params
     elif custom_llm_provider == "bedrock":

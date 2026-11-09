@@ -188,7 +188,7 @@ export function LogDetailContent({
       <MetricsSection logEntry={logEntry} metadata={metadata} />
 
       {/* Cost Breakdown */}
-      <CostBreakdownViewer
+      {metadata.spend_logs_metadata?.pricing_status !== "unconfirmed" && <CostBreakdownViewer
         costBreakdown={metadata?.cost_breakdown}
         totalSpend={logEntry.spend ?? 0}
         promptTokens={logEntry.prompt_tokens}
@@ -197,7 +197,7 @@ export function LogDetailContent({
         rawInputTokens={metadata?.additional_usage_values?.prompt_tokens_details?.text_tokens}
         cacheReadTokens={metadata?.additional_usage_values?.cache_read_input_tokens}
         cacheCreationTokens={metadata?.additional_usage_values?.cache_creation_input_tokens}
-      />
+      />}
 
       {/* Tools */}
       <ToolsSection log={logEntry} />
@@ -512,7 +512,7 @@ function MetricsSection({ logEntry, metadata }: { logEntry: LogEntry; metadata: 
             {reasoningTokens !== undefined && reasoningTokens > 0 && (
               <DescriptionItem label="Reasoning Tokens">{formatNumberWithCommas(reasoningTokens)}</DescriptionItem>
             )}
-            <DescriptionItem label="Cost">${formatNumberWithCommas(logEntry.spend || 0, 8)}</DescriptionItem>
+            <DescriptionItem label="Cost (CNY)">{metadata.spend_logs_metadata?.pricing_status === "unconfirmed" ? "未确认：历史数量缺失" : `¥${formatNumberWithCommas(logEntry.spend || 0, 8)}`}</DescriptionItem>
             <DescriptionItem label="Duration">
               {logEntry.request_duration_ms != null ? (logEntry.request_duration_ms / 1000).toFixed(3) : "-"} s
             </DescriptionItem>
