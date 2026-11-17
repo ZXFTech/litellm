@@ -1,6 +1,6 @@
 # 本机模型网关
 
-这个目录管理独立的 LiteLLM 和 PostgreSQL 服务。项目名为 `llm-gateway`，只监听本机 `127.0.0.1:4000`，数据库没有宿主端口
+这个目录管理独立的 LiteLLM 和 PostgreSQL 服务。项目名为 `llm-gateway`，默认监听本机 `127.0.0.1:4000`，数据库没有宿主端口
 
 源码来自 `ZXFTech/litellm` fork，上游为 `BerriAI/litellm`。本地分支基于 `v1.108.3`，提交 `b7d579fab2818968322ef96e5b8e98dc8178fafc`。服务使用固定摘要的同版本官方数据库镜像，并通过 Compose 只读挂载本机图片适配器、计费回调、三处 Python 修复和人民币管理界面。挂载清单见 `compose.yaml`，其他源码改动不会自动进入运行中的镜像。升级时必须复核这些修复和模块路径
 
@@ -15,6 +15,17 @@
 ```
 
 管理页为 [LiteLLM 管理界面](http://127.0.0.1:4000/ui/)，账号为 `admin`。密码保存在 `.local/admin-login.txt`。模型调用客户端使用管理页创建的虚拟 Key，管理主密钥仅用于管理操作
+
+需要从局域网访问时，在 `.local/compose.lan.yaml` 为网关增加本机的局域网 IPv4 监听，再运行 `gateway.ps1 start`。将下例地址替换为这台电脑在路由器上保留的地址
+
+```yaml
+services:
+  gateway:
+    ports:
+      - "192.168.0.105:4000:4000"
+```
+
+在 Windows 防火墙中，仅允许专用网络上的同网段设备访问这台电脑的 TCP 4000。同网段客户端使用 `http://192.168.0.105:4000/v1` 和虚拟 Key。可以从另一台设备打开 `http://192.168.0.105:4000/health/readiness` 检查连通性
 
 ## agent-platform 接入
 

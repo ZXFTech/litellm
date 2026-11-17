@@ -3,9 +3,14 @@ param([ValidateSet('start', 'stop', 'status', 'verify', 'logs')][string]$Action 
 $ErrorActionPreference = 'Stop'
 $gatewayRoot = $PSScriptRoot
 $envPath = Join-Path $gatewayRoot '.env'
+$lanComposePath = Join-Path $gatewayRoot '.local/compose.lan.yaml'
+$composeFiles = @('--file', (Join-Path $gatewayRoot 'compose.yaml'))
+if (Test-Path -LiteralPath $lanComposePath -PathType Leaf) {
+  $composeFiles += @('--file', $lanComposePath)
+}
 
 function Invoke-GatewayCompose([string[]]$CommandArgs) {
-  & docker compose --project-directory $gatewayRoot --file (Join-Path $gatewayRoot 'compose.yaml') @CommandArgs
+  & docker compose --project-directory $gatewayRoot @composeFiles @CommandArgs
   if ($LASTEXITCODE -ne 0) { throw 'Docker Compose command failed. Check Docker Desktop and gateway status.' }
 }
 
