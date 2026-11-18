@@ -50,3 +50,5 @@ PostgreSQL 数据保存在独立 Docker named volume。停止服务保留数据�
 首次启动会在这个新建专用数据库应用 LiteLLM 自带迁移。后续启动固定在同一镜像摘要，不会自动拉取最新版。新检出的工程还需要按 [PRICING.md](PRICING.md) 构建本地人民币界面，生成 `cny-ui` 后再启动
 
 个人多设备、内部多团队与对外付费服务的配置建议见 [网关 API 设置建议](API_SETTINGS_GUIDE.md)，其中也记录 LiteLLM 官方模型目录的刷新结果与人民币计费边界
+
+个人档当前能力、缺口与分批实施步骤见 [个人模型网关完善计划](../docs/specs/0001-personal-gateway-readiness/index.md)，运行时检查的证据边界见其中的审计依据
