@@ -8,7 +8,7 @@ config derived from ``tests/integration/proxy_config.yaml`` and starts an owned 
 - spend logs flush every second (``proxy_batch_write_at``) and callbacks flush every second
   (``DEFAULT_FLUSH_INTERVAL_SECONDS``), so ``eventually`` converges quickly;
 - provider-default routes (file, batch, container lists with no deployment) resolve to the
-  provider double through ``OPENAI_BASE_URL``, and the remote catalogs (cost map, blog posts,
+  provider double through ``OPENAI_BASE_URL``, and the remote catalogs (cost map,
   beta headers, autorouter presets, policy templates) are read from the package, so a route
   sweep never leaves the machine;
 - ``HTTP(S)_PROXY`` points at an egress trap that answers every connection with 403 and
@@ -76,7 +76,6 @@ LOCAL_CATALOGS: Final = MappingProxyType(
         name: "True"
         for name in (
             "LITELLM_LOCAL_MODEL_COST_MAP",
-            "LITELLM_LOCAL_BLOG_POSTS",
             "LITELLM_LOCAL_ANTHROPIC_BETA_HEADERS",
             "LITELLM_LOCAL_AUTOROUTER_PRESETS",
             "LITELLM_LOCAL_POLICY_TEMPLATES",

@@ -1,7 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import { DashboardHeader } from "./DashboardHeader";
-import { NAV_PRODUCT_LINK_CLASS } from "@/components/Navbar/navProductLinkClass";
 import { CommandPaletteProvider } from "@/components/CommandPalette/CommandPaletteProvider";
 
 const { mockUsePluginMode, mockUseUISettings, state } = vi.hoisted(() => {
@@ -23,11 +22,6 @@ vi.mock("@/app/(dashboard)/hooks/uiSettings/useUISettings", () => ({ useUISettin
 vi.mock("next/navigation", () => ({ usePathname: () => state.pathname }));
 vi.mock("usehooks-ts", () => ({ useMediaQuery: () => state.isDesktop }));
 vi.mock("@/hooks/useWorker", () => ({ useWorker: () => ({ isControlPlane: false, selectedWorker: null }) }));
-vi.mock("@/app/(dashboard)/hooks/useDisableShowPrompts", () => ({ useDisableShowPrompts: () => false }));
-vi.mock("@/components/Navbar/BlogDropdown/BlogDropdown", () => ({ BlogDropdown: () => null }));
-vi.mock("@/components/Navbar/CommunityEngagementButtons/CommunityEngagementButtons", () => ({
-  CommunityEngagementButtons: () => null,
-}));
 vi.mock("@/components/Navbar/NotificationsBell/NotificationsBell", () => ({ NotificationsBell: () => null }));
 vi.mock("@/components/Navbar/WorkerDropdown/WorkerDropdown", () => ({ default: () => null }));
 vi.mock("@/components/liteadmin/LiteAdmin", () => ({ default: () => <button>LiteAdmin</button> }));
@@ -88,16 +82,6 @@ describe("DashboardHeader breadcrumb", () => {
     expect(screen.queryByText("Observability")).not.toBeInTheDocument();
   });
 
-  it("styles Docs with the shared product-link class instead of a muted toolbar button", () => {
-    renderDashboardHeader();
-
-    const docs = screen.getByRole("link", { name: "Docs" });
-    for (const cls of NAV_PRODUCT_LINK_CLASS.trim().split(/\s+/)) {
-      expect(docs).toHaveClass(cls);
-    }
-    expect(docs).not.toHaveClass("text-muted-foreground");
-  });
-
   it("renders the tools divider centered rather than stretched to the top of the row", () => {
     const { container } = renderDashboardHeader();
 
@@ -107,13 +91,15 @@ describe("DashboardHeader breadcrumb", () => {
     expect(separators[0].className).toContain("data-vertical:self-center");
   });
 
-  it("places LiteAdmin in the header tools ahead of Docs", () => {
+  it("keeps management controls available without promotional navigation", () => {
+    state.isDesktop = true;
     renderDashboardHeader();
 
-    const liteAdmin = within(screen.getByRole("banner")).getByRole("button", { name: "LiteAdmin" });
-    expect(liteAdmin.compareDocumentPosition(screen.getByRole("link", { name: "Docs" }))).toBe(
-      Node.DOCUMENT_POSITION_FOLLOWING,
-    );
+    const header = within(screen.getByRole("banner"));
+    expect(header.getByRole("button", { name: "LiteAdmin" })).toBeInTheDocument();
+    expect(header.getByRole("button", { name: /Switch to .* mode/ })).toBeInTheDocument();
+    expect(header.queryByRole("link", { name: /Docs|Slack|GitHub/i })).not.toBeInTheDocument();
+    expect(header.queryByRole("button", { name: "Blog" })).not.toBeInTheDocument();
   });
 
   it("keeps the gateway selector and tools available from the compact header menu", async () => {
@@ -121,8 +107,9 @@ describe("DashboardHeader breadcrumb", () => {
     fireEvent.click(screen.getByRole("button", { name: "More options" }));
     const tools = await screen.findByRole("dialog", { name: "Gateway tools" });
     expect(within(tools).getByRole("button", { name: "AI Gateway" })).toBeInTheDocument();
-    expect(within(tools).getByRole("link", { name: "Docs" })).toBeInTheDocument();
     expect(within(tools).getByRole("button", { name: "LiteAdmin" })).toBeInTheDocument();
+    expect(within(tools).queryByRole("link", { name: /Docs|Slack|GitHub/i })).not.toBeInTheDocument();
+    expect(within(tools).queryByRole("button", { name: "Blog" })).not.toBeInTheDocument();
   });
 
   it("closes mobile tools when switching to desktop and keeps them closed when returning", async () => {

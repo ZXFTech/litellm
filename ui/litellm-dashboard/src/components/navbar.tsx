@@ -1,6 +1,5 @@
 import { useHealthReadinessDetails } from "@/app/(dashboard)/hooks/healthReadiness/useHealthReadinessDetails";
 import { useDisableBouncingIcon } from "@/app/(dashboard)/hooks/useDisableBouncingIcon";
-import { useDisableShowPrompts } from "@/app/(dashboard)/hooks/useDisableShowPrompts";
 import { useWorker } from "@/hooks/useWorker";
 import { getProxyBaseUrl } from "@/components/networking";
 import { uiHref } from "@/utils/uiHref";
@@ -11,9 +10,6 @@ import { Badge } from "@/components/ui/badge";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { BlogDropdown } from "./Navbar/BlogDropdown/BlogDropdown";
-import { DocsLink } from "./Navbar/DocsLink/DocsLink";
-import { CommunityEngagementButtons } from "./Navbar/CommunityEngagementButtons/CommunityEngagementButtons";
 import { cn } from "@/lib/cva.config";
 import { NotificationsBell } from "./Navbar/NotificationsBell/NotificationsBell";
 import UserDropdown from "./Navbar/UserDropdown/UserDropdown";
@@ -43,7 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({
   const { data: healthData } = useHealthReadinessDetails(accessToken);
   const version = healthData?.litellm_version;
   const disableBouncingIcon = useDisableBouncingIcon();
-  const hideCommunityLinks = useDisableShowPrompts();
   const { isControlPlane, selectedWorker } = useWorker();
   const showWorkerSwitch = isControlPlane && selectedWorker !== null;
 
@@ -129,20 +124,6 @@ const Navbar: React.FC<NavbarProps> = ({
             {showWorkerSwitch && (
               <div className="flex shrink-0 items-center">
                 <WorkerDropdown onWorkerSwitch={handleWorkerSwitch} />
-              </div>
-            )}
-
-            <nav
-              aria-label="Product documentation"
-              className={`flex min-w-0 items-center gap-2 ${showWorkerSwitch ? "border-l border-border pl-4" : ""}`}
-            >
-              <DocsLink />
-              <BlogDropdown />
-            </nav>
-
-            {!hideCommunityLinks && (
-              <div className="flex shrink-0 items-center border-l border-border pl-4">
-                <CommunityEngagementButtons />
               </div>
             )}
 

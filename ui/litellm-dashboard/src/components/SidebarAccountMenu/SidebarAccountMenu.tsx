@@ -1,6 +1,5 @@
 import useAuthorized from "@/app/(dashboard)/hooks/useAuthorized";
 import { useHealthReadinessDetails } from "@/app/(dashboard)/hooks/healthReadiness/useHealthReadinessDetails";
-import { useDisableBlogPosts } from "@/app/(dashboard)/hooks/useDisableBlogPosts";
 import { useDisableBouncingIcon } from "@/app/(dashboard)/hooks/useDisableBouncingIcon";
 import { useDisableLiteAdmin } from "@/app/(dashboard)/hooks/useDisableLiteAdmin";
 import { useDisableShowNewBadge } from "@/app/(dashboard)/hooks/useDisableShowNewBadge";
@@ -100,7 +99,6 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
   const { data: healthData } = useHealthReadinessDetails(accessToken);
   const version = healthData?.litellm_version;
   const disableShowPrompts = useDisableShowPrompts();
-  const disableBlogPosts = useDisableBlogPosts();
   const disableBouncingIcon = useDisableBouncingIcon();
   const disableShowNewBadge = useDisableShowNewBadge();
   const [disableLiteAdmin, setDisableLiteAdmin] = useDisableLiteAdmin(userId);
@@ -129,13 +127,6 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
       ariaLabel: "Toggle hide all prompts",
       checked: disableShowPrompts,
       onCheckedChange: (checked: boolean) => setFlag("disableShowPrompts", checked),
-    },
-    {
-      key: "disableBlogPosts",
-      label: "Hide Blog Posts",
-      ariaLabel: "Toggle hide blog posts",
-      checked: disableBlogPosts,
-      onCheckedChange: (checked: boolean) => setFlag("disableBlogPosts", checked),
     },
     {
       key: "disableBouncingIcon",

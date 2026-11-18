@@ -22,6 +22,7 @@ services:
       - ./gateway_pricing.py:/app/gateway_pricing.py:ro
       - ./pricing.json:/app/pricing.json:ro
       - ../litellm/litellm_core_utils/llm_cost_calc/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/llm_cost_calc/utils.py:ro
+      - ../litellm/proxy/public_endpoints/public_endpoints.py:/app/.venv/lib/python3.13/site-packages/litellm/proxy/public_endpoints/public_endpoints.py:ro
       - ./cny-ui:/app/cny-ui:ro
       - ../litellm/types/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/types/utils.py:ro
       - ../litellm/utils.py:/app/.venv/lib/python3.13/site-packages/litellm/utils.py:ro

@@ -13555,29 +13555,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/public/litellm_blog_posts": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Litellm Blog Posts
-         * @description Public endpoint to get the latest LiteLLM blog posts, each with its RSS categories as ``tags``.
-         *
-         *     Fetches the docs RSS feed with a 1-hour in-process cache.
-         *     Falls back to the bundled local backup on any failure.
-         */
-        get: operations["get_litellm_blog_posts_public_litellm_blog_posts_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/public/litellm_model_cost_map": {
         parameters: {
             query?: never;
@@ -27294,27 +27271,6 @@ export interface components {
              */
             keyword: string;
         };
-        /** BlogPost */
-        BlogPost: {
-            /** Date */
-            date: string;
-            /** Description */
-            description: string;
-            /**
-             * Tags
-             * @default []
-             */
-            tags: string[];
-            /** Title */
-            title: string;
-            /** Url */
-            url: string;
-        };
-        /** BlogPostsResponse */
-        BlogPostsResponse: {
-            /** Posts */
-            posts: components["schemas"]["BlogPost"][];
-        };
         /** Body_audio_transcriptions_audio_transcriptions_post */
         Body_audio_transcriptions_audio_transcriptions_post: {
             /** File */
@@ -35038,6 +34994,10 @@ export interface components {
             cache_creation_input_token_cost_above_272k_tokens_priority?: number | null;
             /** Cache Creation Input Token Cost Above 272K Tokens Ultrafast */
             cache_creation_input_token_cost_above_272k_tokens_ultrafast?: number | null;
+            /** Cache Creation Input Token Cost Above 512K Tokens */
+            cache_creation_input_token_cost_above_512k_tokens?: number | null;
+            /** Cache Creation Input Token Cost Above 512K Tokens Priority */
+            cache_creation_input_token_cost_above_512k_tokens_priority?: number | null;
             /** Cache Creation Input Token Cost Batches */
             cache_creation_input_token_cost_batches?: number | null;
             /** Cache Creation Input Token Cost Flex */
@@ -35080,6 +35040,8 @@ export interface components {
             cache_read_input_token_cost_above_272k_tokens_ultrafast?: number | null;
             /** Cache Read Input Token Cost Above 512K Tokens */
             cache_read_input_token_cost_above_512k_tokens?: number | null;
+            /** Cache Read Input Token Cost Above 512K Tokens Priority */
+            cache_read_input_token_cost_above_512k_tokens_priority?: number | null;
             /** Cache Read Input Token Cost Balanced */
             cache_read_input_token_cost_balanced?: number | null;
             /** Cache Read Input Token Cost Batches */
@@ -35191,6 +35153,8 @@ export interface components {
             input_cost_per_token_above_272k_tokens_ultrafast?: number | null;
             /** Input Cost Per Token Above 512K Tokens */
             input_cost_per_token_above_512k_tokens?: number | null;
+            /** Input Cost Per Token Above 512K Tokens Priority */
+            input_cost_per_token_above_512k_tokens_priority?: number | null;
             /** Input Cost Per Token Balanced */
             input_cost_per_token_balanced?: number | null;
             /** Input Cost Per Token Batches */
@@ -35336,6 +35300,8 @@ export interface components {
             output_cost_per_token_above_272k_tokens_ultrafast?: number | null;
             /** Output Cost Per Token Above 512K Tokens */
             output_cost_per_token_above_512k_tokens?: number | null;
+            /** Output Cost Per Token Above 512K Tokens Priority */
+            output_cost_per_token_above_512k_tokens_priority?: number | null;
             /** Output Cost Per Token Balanced */
             output_cost_per_token_balanced?: number | null;
             /** Output Cost Per Token Batches */
@@ -50297,6 +50263,10 @@ export interface components {
             cache_creation_input_token_cost_above_272k_tokens_priority?: number | null;
             /** Cache Creation Input Token Cost Above 272K Tokens Ultrafast */
             cache_creation_input_token_cost_above_272k_tokens_ultrafast?: number | null;
+            /** Cache Creation Input Token Cost Above 512K Tokens */
+            cache_creation_input_token_cost_above_512k_tokens?: number | null;
+            /** Cache Creation Input Token Cost Above 512K Tokens Priority */
+            cache_creation_input_token_cost_above_512k_tokens_priority?: number | null;
             /** Cache Creation Input Token Cost Batches */
             cache_creation_input_token_cost_batches?: number | null;
             /** Cache Creation Input Token Cost Flex */
@@ -50339,6 +50309,8 @@ export interface components {
             cache_read_input_token_cost_above_272k_tokens_ultrafast?: number | null;
             /** Cache Read Input Token Cost Above 512K Tokens */
             cache_read_input_token_cost_above_512k_tokens?: number | null;
+            /** Cache Read Input Token Cost Above 512K Tokens Priority */
+            cache_read_input_token_cost_above_512k_tokens_priority?: number | null;
             /** Cache Read Input Token Cost Balanced */
             cache_read_input_token_cost_balanced?: number | null;
             /** Cache Read Input Token Cost Batches */
@@ -50450,6 +50422,8 @@ export interface components {
             input_cost_per_token_above_272k_tokens_ultrafast?: number | null;
             /** Input Cost Per Token Above 512K Tokens */
             input_cost_per_token_above_512k_tokens?: number | null;
+            /** Input Cost Per Token Above 512K Tokens Priority */
+            input_cost_per_token_above_512k_tokens_priority?: number | null;
             /** Input Cost Per Token Balanced */
             input_cost_per_token_balanced?: number | null;
             /** Input Cost Per Token Batches */
@@ -50595,6 +50569,8 @@ export interface components {
             output_cost_per_token_above_272k_tokens_ultrafast?: number | null;
             /** Output Cost Per Token Above 512K Tokens */
             output_cost_per_token_above_512k_tokens?: number | null;
+            /** Output Cost Per Token Above 512K Tokens Priority */
+            output_cost_per_token_above_512k_tokens_priority?: number | null;
             /** Output Cost Per Token Balanced */
             output_cost_per_token_balanced?: number | null;
             /** Output Cost Per Token Batches */
@@ -69249,26 +69225,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["SupportedEndpointsResponse"];
-                };
-            };
-        };
-    };
-    get_litellm_blog_posts_public_litellm_blog_posts_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BlogPostsResponse"];
                 };
             };
         };
