@@ -48,3 +48,5 @@ PostgreSQL 数据保存在独立 Docker named volume。停止服务保留数据�
 `.env`、`.local`、数据库备份及生成的 `cny-ui` 均已排除 Git。保留并安全备份原 `.env`，其中 `LITELLM_SALT_KEY` 用于解密供应商凭据。升级前备份数据库及凭据，按目标版本处理迁移。数据库已迁移时，仅换回旧镜像不保证能够回滚。不要使用 `docker compose down -v` 删除数据卷
 
 首次启动会在这个新建专用数据库应用 LiteLLM 自带迁移。后续启动固定在同一镜像摘要，不会自动拉取最新版。新检出的工程还需要按 [PRICING.md](PRICING.md) 构建本地人民币界面，生成 `cny-ui` 后再启动
+
+个人多设备、内部多团队与对外付费服务的配置建议见 [网关 API 设置建议](API_SETTINGS_GUIDE.md)，其中也记录 LiteLLM 官方模型目录的刷新结果与人民币计费边界
