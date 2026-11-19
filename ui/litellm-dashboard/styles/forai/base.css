@@ -1,0 +1,74 @@
+/* Adapted from shadcn/ui (MIT). See installed THIRD_PARTY_NOTICES.md. */
+@layer theme {
+:root, [data-theme-preview] {
+  color-scheme: light dark;
+  --background: light-dark(oklch(1 0 0), oklch(0.145 0 0));
+  --foreground: light-dark(oklch(0% 0 0), oklch(0.985 0 0));
+  --card: light-dark(oklch(1 0 0), oklch(0.205 0 0));
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: var(--theme-neutral);
+  --primary-foreground: var(--theme-neutral-foreground);
+  --app: var(--primary);
+  --app-foreground: var(--primary-foreground);
+  --secondary: var(--theme-neutral-soft);
+  --secondary-foreground: var(--theme-neutral-soft-foreground);
+  --warning: var(--theme-amber);
+  --warning-foreground: var(--theme-amber-foreground);
+  --danger: var(--theme-red);
+  --danger-foreground: var(--theme-red-foreground);
+  --success: var(--theme-green);
+  --success-foreground: var(--theme-green-foreground);
+  --muted: light-dark(oklch(0.97 0 0), oklch(0.269 0 0));
+  --muted-foreground: light-dark(oklch(0.556 0 0), oklch(0.708 0 0));
+  --accent: light-dark(oklch(0.97 0 0), oklch(0.371 0 0));
+  --accent-foreground: var(--secondary-foreground);
+  --destructive: var(--danger);
+  --destructive-foreground: var(--danger-foreground);
+  --border: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 10%));
+  --input: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 15%));
+  --ring: light-dark(oklch(0.708 0 0), oklch(0.556 0 0));
+  /* Paired palettes keep role foregrounds legible in either appearance. */
+  --theme-neutral: light-dark(oklch(0% 0 0), oklch(0.922 0 0));
+  --theme-neutral-foreground: light-dark(oklch(0.985 0 0), oklch(0.205 0 0));
+  --theme-neutral-soft: light-dark(oklch(0.97 0 0), oklch(0.269 0 0));
+  --theme-neutral-soft-foreground: light-dark(oklch(0.205 0 0), oklch(0.985 0 0));
+  --theme-blue: light-dark(#1d4ed8, #93c5fd);
+  --theme-blue-foreground: light-dark(#ffffff, #172554);
+  --theme-blue-soft: light-dark(#dbeafe, #172554);
+  --theme-blue-soft-foreground: light-dark(#1e40af, #bfdbfe);
+  --theme-violet: light-dark(#6d28d9, #c4b5fd);
+  --theme-violet-foreground: light-dark(#ffffff, #2e1065);
+  --theme-violet-soft: light-dark(#ede9fe, #2e1065);
+  --theme-violet-soft-foreground: light-dark(#5b21b6, #ddd6fe);
+  --theme-teal: light-dark(#0f766e, #5eead4);
+  --theme-teal-foreground: light-dark(#ffffff, #042f2e);
+  --theme-teal-soft: light-dark(#ccfbf1, #042f2e);
+  --theme-teal-soft-foreground: light-dark(#115e59, #99f6e4);
+  --theme-amber: light-dark(#b45309, #fcd34d);
+  --theme-amber-foreground: light-dark(#ffffff, #451a03);
+  --theme-amber-soft: light-dark(#fef3c7, #451a03);
+  --theme-amber-soft-foreground: light-dark(#92400e, #fde68a);
+  --theme-red: light-dark(#b91c1c, #fca5a5);
+  --theme-red-foreground: light-dark(#ffffff, #450a0a);
+  --theme-red-soft: light-dark(#fee2e2, #450a0a);
+  --theme-red-soft-foreground: light-dark(#991b1b, #fecaca);
+  --theme-green: light-dark(#15803d, #86efac);
+  --theme-green-foreground: light-dark(#ffffff, #052e16);
+  --theme-green-soft: light-dark(#dcfce7, #052e16);
+  --theme-green-soft-foreground: light-dark(#166534, #bbf7d0);
+}
+
+:root {
+  --radius: 0.625rem;
+  --typeset-leading: 1.75;
+}
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background font-sans text-foreground; }
+}

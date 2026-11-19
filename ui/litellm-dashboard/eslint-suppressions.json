@@ -1,30 +1,24 @@
 {
-  "scripts/check-lint-budgets.mjs": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/admin-panel/_components/AdminPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/agents/_components/add_agent_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 3
-    },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
+  "src/app/(dashboard)/agents/_components/agent_card_discovery.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/app/(dashboard)/agents/_components/agent_card_discovery.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/refs": {
@@ -34,63 +28,29 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/agents/_components/agent_cost_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/app/(dashboard)/agents/_components/agent_config.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
     }
   },
-  "src/app/(dashboard)/agents/_components/agent_form_fields.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/app/(dashboard)/agents/_components/agent_discovery_utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     }
   },
   "src/app/(dashboard)/agents/_components/agent_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
     "react-hooks/immutability": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/agents/_components/agent_virtual_keys.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/agents/_components/cost_config_fields.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/agents/_components/dynamic_agent_form_fields.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/budgets/_components/budget_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/budgets/_components/budget_panel.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/budgets/_components/edit_budget_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/app/(dashboard)/agents/_components/agent_type_utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/caching/_components/cache_dashboard.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/purity": {
       "count": 1
@@ -100,89 +60,13 @@
     }
   },
   "src/app/(dashboard)/caching/_components/cache_health.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
     }
   },
   "src/app/(dashboard)/caching/_components/cache_settings/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
-    }
-  },
-  "src/app/(dashboard)/caching/_components/coordination_redis_settings/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/caching/_components/response_time_indicator.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/add_margin_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/add_provider_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/cost_tracking_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 2
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/how_it_works.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/pricing_calculator/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/pricing_calculator/multi_cost_results.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/pricing_calculator/multi_export_dropdown.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/pricing_calculator/use_multi_cost_estimate.ts": {
-    "no-restricted-syntax": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/provider_discount_table.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/provider_margin_table.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/use_discount_config.ts": {
-    "no-restricted-syntax": {
-      "count": 2
-    }
-  },
-  "src/app/(dashboard)/cost-tracking/_components/use_margin_config.ts": {
-    "no-restricted-syntax": {
-      "count": 2
     }
   },
   "src/app/(dashboard)/guardrails-monitor/_components/EvaluationSettingsModal.tsx": {
@@ -190,19 +74,14 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/guardrails-monitor/_components/GuardrailDetail.tsx": {
-    "no-nested-ternary": {
-      "count": 3
-    }
-  },
-  "src/app/(dashboard)/guardrails-monitor/_components/GuardrailsOverview.tsx": {
-    "no-nested-ternary": {
-      "count": 5
-    }
-  },
   "src/app/(dashboard)/guardrails/_components/GuardrailTestPlayground.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/guardrails/_components/GuardrailsPanel.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/guardrails/_components/GuardrailsPanel.tsx": {
@@ -211,29 +90,11 @@
     }
   },
   "src/app/(dashboard)/guardrails/_components/TeamGuardrailsTab.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 2
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/guardrails/_components/add_guardrail_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "react-hooks/set-state-in-effect": {
-      "count": 1
-    },
     "react/no-unescaped-entities": {
       "count": 2
     }
@@ -244,101 +105,69 @@
     }
   },
   "src/app/(dashboard)/guardrails/_components/content_filter/ContentCategoryConfiguration.tsx": {
-    "no-nested-ternary": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/guardrails/_components/content_filter/ContentFilterConfiguration.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 3
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/app/(dashboard)/guardrails/_components/content_filter/ContentFilterDisplay.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
     }
   },
   "src/app/(dashboard)/guardrails/_components/content_filter/ContentFilterManager.tsx": {
-    "max-params": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
     },
     "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/guardrails/_components/content_filter/KeywordTable.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/guardrails/_components/custom_code/CustomCodeModal.tsx": {
-    "no-nested-ternary": {
-      "count": 6
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/guardrails/_components/guardrailTableColumns.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/guardrail_garden.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/guardrail_garden_card.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/guardrail_garden_detail.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/app/(dashboard)/guardrails/_components/guardrail_info.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
   "src/app/(dashboard)/guardrails/_components/guardrail_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
     },
     "react-hooks/set-state-in-effect": {
       "count": 3
     }
   },
   "src/app/(dashboard)/guardrails/_components/guardrail_info_helpers.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/guardrails/_components/guardrail_optional_params.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/guardrails/_components/guardrail_provider_fields.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/guardrail_table.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/pii_components.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/guardrails/_components/pii_configuration.tsx": {
-    "local/filename-pascal-case": {
       "count": 1
     }
   },
@@ -347,59 +176,79 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/accessGroups/useAccessGroupDetails.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+  "src/app/(dashboard)/hooks/accessGroups/useAccessGroups.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
-  "src/app/(dashboard)/hooks/accessGroups/useAccessGroups.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+  "src/app/(dashboard)/hooks/agents/useAgents.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
-  "src/app/(dashboard)/hooks/accessGroups/useDeleteAccessGroup.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+  "src/app/(dashboard)/hooks/budgets/useBudgets.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
-  "src/app/(dashboard)/hooks/accessGroups/useEditAccessGroup.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+  "src/app/(dashboard)/hooks/cloudzero/useCloudZeroCreate.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 13
     }
   },
   "src/app/(dashboard)/hooks/cloudzero/useCloudZeroCreate.ts": {
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/cloudzero/useCloudZeroDryRun.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     }
   },
   "src/app/(dashboard)/hooks/cloudzero/useCloudZeroDryRun.ts": {
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/cloudzero/useCloudZeroExport.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     }
   },
   "src/app/(dashboard)/hooks/cloudzero/useCloudZeroExport.ts": {
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/cloudzero/useCloudZeroSettings.ts": {
-    "no-restricted-syntax": {
-      "count": 3
+  "src/app/(dashboard)/hooks/cloudzero/useCloudZeroSettings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 27
     }
   },
   "src/app/(dashboard)/hooks/configOverrides/hashicorpVaultApi.ts": {
-    "no-restricted-syntax": {
-      "count": 4
-    }
-  },
-  "src/app/(dashboard)/hooks/guardrails/useRegisterGuardrail.ts": {
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/healthReadiness/useHealthReadinessDetails.ts": {
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/hooks/configOverrides/useHashicorpVaultConfig.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/configOverrides/useUpdateHashicorpVaultConfig.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/credentials/useCredentials.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/app/(dashboard)/hooks/guardrails/useGuardrails.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
     }
   },
   "src/app/(dashboard)/hooks/keys/useKeyAliases.test.ts": {
@@ -407,97 +256,201 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/keys/useKeys.ts": {
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/hooks/keys/useKeys.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/keys/useResetKeySpend.ts": {
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/hooks/mcpSemanticFilterSettings/useMCPSemanticFilterSettings.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/mcpSemanticFilterSettings/useUpdateMCPSemanticFilterSettings.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/mcpServers/useMCPAccessGroups.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/app/(dashboard)/hooks/mcpServers/useMCPServerHealth.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/mcpServers/useMCPServers.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/app/(dashboard)/hooks/models/useModelCostMap.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/app/(dashboard)/hooks/models/useModelCostMap.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/models/useModels.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 30
     }
   },
   "src/app/(dashboard)/hooks/models/useModels.ts": {
-    "max-params": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/onboarding/useOnboarding.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/app/(dashboard)/hooks/organizations/useOrganizations.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     }
   },
   "src/app/(dashboard)/hooks/projects/useCreateProject.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    },
     "react/display-name": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/projects/useCreateProject.ts": {
-    "no-restricted-syntax": {
       "count": 1
     }
   },
   "src/app/(dashboard)/hooks/projects/useProjectDetails.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    },
     "react/display-name": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/projects/useProjectDetails.ts": {
-    "no-restricted-syntax": {
       "count": 1
     }
   },
   "src/app/(dashboard)/hooks/projects/useProjects.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    },
     "react/display-name": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/projects/useProjects.ts": {
-    "no-restricted-syntax": {
       "count": 1
     }
   },
   "src/app/(dashboard)/hooks/projects/useUpdateProject.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    },
     "react/display-name": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/hooks/projects/useUpdateProject.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+  "src/app/(dashboard)/hooks/providers/useProviderFields.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/app/(dashboard)/hooks/proxyConfig/useProxyConfig.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 18
     }
   },
   "src/app/(dashboard)/hooks/proxyConfig/useProxyConfig.ts": {
-    "no-restricted-syntax": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     }
   },
   "src/app/(dashboard)/hooks/router/useRouterFields.ts": {
-    "no-restricted-syntax": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/storeModelInDB/useStoreModelInDB.ts": {
-    "no-restricted-syntax": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/storeRequestInSpendLogs/useStoreRequestInSpendLogs.ts": {
-    "no-restricted-syntax": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/hooks/teams/useTeams.ts": {
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
     }
   },
-  "src/app/(dashboard)/hooks/useTeams.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/hooks/routingGroups/useRoutingGroups.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/sso/useEditSSOSettings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
+    }
+  },
+  "src/app/(dashboard)/hooks/sso/useEditSSOSettings.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/app/(dashboard)/hooks/sso/useSSOSettings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/app/(dashboard)/hooks/storeModelInDB/useStoreModelInDB.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/tags/useTags.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/app/(dashboard)/hooks/teams/useTeams.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 31
+    }
+  },
+  "src/app/(dashboard)/hooks/uiConfig/useUIConfig.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/app/(dashboard)/hooks/uiSettings/usePtuCostAttributionEnabled.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/app/(dashboard)/hooks/uiSettings/useUISettings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/app/(dashboard)/hooks/uiSettings/useUISettings.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/uiSettings/useUpdateUISettings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/app/(dashboard)/hooks/uiSettings/useUpdateUISettings.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/hooks/users/useCurrentUser.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/app/(dashboard)/hooks/users/useUsers.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
+    }
+  },
+  "src/app/(dashboard)/mcp-servers/_components/CreateMCPServer.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/CreateMCPServer.tsx": {
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/MCPNetworkSettings.tsx": {
@@ -511,21 +464,16 @@
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/MCPToolsetsTab.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/mcp-servers/_components/OAuthFormFields.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/mcp-servers/_components/OpenAPIFormSection.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/OpenAPIQuickPicker.tsx": {
@@ -534,119 +482,97 @@
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/ToolTestPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/mcp-servers/_components/UserEnvVarsModal.tsx": {
-    "no-nested-ternary": {
-      "count": 2
-    }
-  },
-  "src/app/(dashboard)/mcp-servers/_components/index.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/mcp-servers/_components/editServerPayload.differential.cases.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/mcp-servers/_components/editServerPayload.differential.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
   "src/app/(dashboard)/mcp-servers/_components/mcp_connect.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/static-components": {
       "count": 4
     }
   },
-  "src/app/(dashboard)/mcp-servers/_components/mcp_connection_status.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/mcp-servers/_components/mcp_connection_status.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 3
+    }
+  },
+  "src/app/(dashboard)/mcp-servers/_components/mcp_connection_status.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_discovery.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_server_cost_config.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/mcp-servers/_components/mcp_server_cost_display.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/app/(dashboard)/mcp-servers/_components/mcp_server_edit.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_server_edit.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_server_view.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_servers.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 3
-    },
-    "no-nested-ternary": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_tool_configuration.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/app/(dashboard)/mcp-servers/_components/mcp_tools.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/app/(dashboard)/mcp-servers/_components/mcp_tools.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
-  "src/app/(dashboard)/mcp-servers/_components/utils.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/models-and-endpoints/components/ModelRetrySettingsTab.tsx": {
-    "no-nested-ternary": {
+  "src/app/(dashboard)/models-and-endpoints/panels/HealthStatusPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/old-usage/_components/usage.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 21
     },
     "prefer-const": {
       "count": 6
@@ -664,47 +590,35 @@
     }
   },
   "src/app/(dashboard)/playground/components/chat_ui/AgentBuilderView.tsx": {
-    "no-nested-ternary": {
-      "count": 2
-    },
     "react-hooks/set-state-in-effect": {
       "count": 5
     }
   },
   "src/app/(dashboard)/playground/components/chat_ui/ChatImageUtils.test.tsx": {
-    "max-nested-callbacks": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/playground/components/chat_ui/ChatMessageBubble.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/app/(dashboard)/playground/components/chat_ui/ChatMessageBubble.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/app/(dashboard)/playground/components/chat_ui/ChatUI.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 6
     },
     "react-hooks/set-state-in-effect": {
       "count": 4
     }
   },
-  "src/app/(dashboard)/playground/components/chat_ui/CodeInterpreterOutput.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
-      "count": 2
+  "src/app/(dashboard)/playground/components/chat_ui/CodeInterpreterOutput.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
   "src/app/(dashboard)/playground/components/chat_ui/RealtimePlayground.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
     },
     "react-hooks/immutability": {
@@ -714,133 +628,108 @@
       "count": 1
     }
   },
+  "src/app/(dashboard)/playground/components/compareUI/CompareUI.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
   "src/app/(dashboard)/playground/components/compareUI/CompareUI.tsx": {
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 4
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/playground/components/compareUI/components/ComparisonPanel.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 2
+  "src/app/(dashboard)/playground/components/compareUI/components/MessageDisplay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
     }
   },
   "src/app/(dashboard)/playground/components/compareUI/components/MessageDisplay.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/playground/components/compareUI/endpoint_config.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/playground/components/complianceUI/ComplianceUI.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 2
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 8
-    },
     "react-hooks/preserve-manual-memoization": {
       "count": 3
     }
   },
-  "src/app/(dashboard)/playground/llm_calls/a2a_send_message.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 2
-    },
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/playground/hooks/useChatHistory.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
     }
   },
+  "src/app/(dashboard)/playground/llm_calls/a2a_send_message.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
   "src/app/(dashboard)/playground/llm_calls/anthropic_messages.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/ban-ts-comment": {
+      "count": 4
     },
-    "max-params": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/app/(dashboard)/playground/llm_calls/audio_speech.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/playground/llm_calls/audio_speech.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
-    },
-    "max-params": {
+    }
+  },
+  "src/app/(dashboard)/playground/llm_calls/audio_transcriptions.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/playground/llm_calls/audio_transcriptions.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
-  "src/app/(dashboard)/playground/llm_calls/embeddings_api.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/playground/llm_calls/embeddings_api.test.tsx": {
+    "@typescript-eslint/ban-ts-comment": {
       "count": 1
     }
   },
   "src/app/(dashboard)/playground/llm_calls/fetch_agents.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/playground/llm_calls/image_edits.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/playground/llm_calls/image_generation.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/playground/llm_calls/interactions_api.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
+  "src/app/(dashboard)/policies/_components/add_attachment_form.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/policies/_components/add_attachment_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     },
     "react-hooks/immutability": {
       "count": 1
     }
   },
   "src/app/(dashboard)/policies/_components/add_policy_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "react-hooks/immutability": {
       "count": 2
@@ -850,95 +739,71 @@
     }
   },
   "src/app/(dashboard)/policies/_components/ai_suggestion_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 3
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 10
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
     },
     "react-hooks/immutability": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/policies/_components/guardrail_selection_modal.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
   "src/app/(dashboard)/policies/_components/guardrail_selection_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/policies/_components/impact_popover.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/policies/_components/impact_preview_alert.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/policies/_components/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/policies/_components/pipeline_flow_builder.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
   "src/app/(dashboard)/policies/_components/policy_info.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/policies/_components/policy_templates.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/policies/_components/policy_templates.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/policies/_components/policy_templates.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
   "src/app/(dashboard)/policies/_components/policy_test_panel.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/immutability": {
       "count": 1
     }
   },
   "src/app/(dashboard)/policies/_components/template_parameter_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/immutability": {
       "count": 1
@@ -947,8 +812,8 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/projects/_components/ProjectDetailsPage.tsx": {
-    "no-nested-ternary": {
+  "src/app/(dashboard)/projects/_components/ProjectKeysTable.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
     }
   },
@@ -957,113 +822,100 @@
       "count": 2
     }
   },
-  "src/app/(dashboard)/prompts/_components/add_prompt_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/prompts/_components/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/prompts/_components/prompt_editor_view.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/DeveloperMessageCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/ModelConfigCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/prompts/_components/prompt_editor_view/PromptCodeSnippets.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/PromptMessagesCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/app/(dashboard)/prompts/_components/prompt_editor_view/VersionHistorySidePanel.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/immutability": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/prompts/_components/prompt_editor_view/conversation_panel/index.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/conversation_panel/MessageBubble.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/conversation_panel/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/prompts/_components/prompt_editor_view/conversation_panel/useConversation.ts": {
-    "no-restricted-syntax": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/app/(dashboard)/prompts/_components/prompt_editor_view/index.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/prompts/_components/prompt_editor_view/utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/prompts/_components/prompt_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 3
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
   "src/app/(dashboard)/prompts/_components/prompt_utils.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/prompts/_components/tool_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/prompts/_components/variable_textarea.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/app/(dashboard)/router-settings/_components/general_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     },
     "prefer-const": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/search-tools/_components/SearchConnectionTest.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/app/(dashboard)/search-tools/_components/SearchTools.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 2
-    },
     "react-hooks/static-components": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/search-tools/_components/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/search-tools/_components/types.tsx": {
-    "local/filename-pascal-case": {
       "count": 1
     }
   },
@@ -1072,51 +924,70 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/skills/_components/add_plugin_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/tag-management/_components/index.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
-  "src/app/(dashboard)/tag-management/_components/tagTableColumns.tsx": {
-    "local/filename-pascal-case": {
       "count": 1
     }
   },
   "src/app/(dashboard)/tag-management/_components/tag_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
+  "src/app/(dashboard)/transform-request/TransformRequestPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/app/(dashboard)/ui-theme/UIThemeSettings.tsx": {
-    "no-restricted-syntax": {
-      "count": 3
-    },
     "react-hooks/immutability": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/usage/_components/components/EndpointUsage/components/EndpointUsageTable.tsx": {
-    "no-nested-ternary": {
+  "src/app/(dashboard)/usage/_components/components/EndpointUsage/EndpointUsage.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/EntityUsage/EntityUsage.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/EntityUsage/EntityUsage.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/EntityUsage/TopModelView.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/EntityUsage/entityUsageAggregations.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/UsageAIChatPanel.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/app/(dashboard)/usage/_components/components/UsageAIChatPanel.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/immutability": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/usage/_components/components/UsagePageView.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
     }
   },
   "src/app/(dashboard)/usage/_components/components/UsagePageView.tsx": {
@@ -1127,26 +998,29 @@
       "count": 1
     }
   },
+  "src/app/(dashboard)/users/_components/BulkEditUsers.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/app/(dashboard)/users/_components/BulkEditUsers.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    },
     "prefer-const": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/users/_components/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/users/_components/user_edit_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/users/_components/view_users.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "prefer-const": {
@@ -1156,50 +1030,45 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/users/_components/view_users/user_info_view.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/users/_components/view_users/user_info_view.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/app/(dashboard)/users/_components/view_users/user_info_view.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    }
+  },
+  "src/app/(dashboard)/users/_components/view_users/user_info_view.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/(dashboard)/vector-stores/_components/index.tsx": {
-    "local/filename-pascal-case": {
+  "src/app/(dashboard)/vector-stores/_components/VectorStoreTester.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
-    },
+    }
+  },
+  "src/app/(dashboard)/vector-stores/_components/index.tsx": {
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/vector-stores/_components/vector_store_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/app/(dashboard)/workflows/WorkflowRuns.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
-      "count": 3
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/app/chat/page.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
   "src/app/login/LoginPage.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
@@ -1214,24 +1083,44 @@
       "count": 1
     }
   },
-  "src/components/AIHub/ModelHubTable.test.tsx": {
-    "max-params": {
+  "src/app/onboarding/OnboardingForm.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
+  "src/components/AIHub/AgentHubTableColumns.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/AIHub/MCPHubTableColumns.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
   "src/components/AIHub/ModelHubTable.tsx": {
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "prefer-const": {
       "count": 4
     }
   },
+  "src/components/AIHub/ModelHubTableColumns.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/components/AIHub/UsefulLinksManagement.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
     "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/AIHub/forms/MakeAgentPublicForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
@@ -1240,29 +1129,55 @@
       "count": 1
     }
   },
+  "src/components/AIHub/forms/MakeMCPPublicForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/components/AIHub/forms/MakeMCPPublicForm.tsx": {
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
+  "src/components/AIHub/forms/MakeModelPublicForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
   "src/components/AIHub/forms/MakeModelPublicForm.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "react-hooks/set-state-in-effect": {
       "count": 1
+    }
+  },
+  "src/components/CreateUserButton.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 15
     }
   },
   "src/components/CreateUserButton.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/GuardrailSettingsView.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/components/ModelInfoEditForm.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     }
   },
-  "src/components/GuardrailsMonitor/LogViewer.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/components/ModelSelect/ModelSelect.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 32
+    }
+  },
+  "src/components/Navbar/UserDropdown/UserDropdown.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/Navbar/UserDropdown/UserDropdown.tsx": {
@@ -1270,32 +1185,52 @@
       "count": 1
     }
   },
+  "src/components/PublicModelHubTableColumns.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
   "src/components/SCIM.tsx": {
-    "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
-  "src/components/Settings/AdminSettings/HashicorpVault/HashicorpVault.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/Settings/AdminSettings/MCPSemanticFilterSettings/MCPSemanticFilterSettings.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/Settings/AdminSettings/SSOSettings/Modals/EditSSOSettingsModal.test.tsx": {
-    "max-nested-callbacks": {
+  "src/components/SSOModals.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/components/Settings/AdminSettings/LoggingSettings/LoggingSettings.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/components/Settings/AdminSettings/MCPSemanticFilterSettings/MCPSemanticFilterSettings.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/components/Settings/AdminSettings/MCPSemanticFilterSettings/MCPSemanticFilterSettings.tsx": {
+    "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/Settings/AdminSettings/SSOSettings/RedactableField.tsx": {
-    "no-nested-ternary": {
+  "src/components/Settings/AdminSettings/MCPSemanticFilterSettings/MCPSemanticFilterTestPanel.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/components/Settings/AdminSettings/SSOSettings/Modals/EditSSOSettingsModal.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 17
+    }
+  },
+  "src/components/Settings/AdminSettings/SSOSettings/utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/Settings/AdminSettings/UISettings/PageVisibilitySettings.tsx": {
@@ -1303,9 +1238,19 @@
       "count": 1
     }
   },
-  "src/components/Settings/AdminSettings/UISettings/UISettings.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/components/Settings/AdminSettings/UserBannerSettings/UserBannerSettings.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/Settings/AdminSettings/WebSearchInterceptionSettings/WebSearchInterceptionSettings.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    }
+  },
+  "src/components/Settings/RouterSettings/Fallbacks/AddFallbacks.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/Settings/RouterSettings/Fallbacks/AddFallbacks.tsx": {
@@ -1318,55 +1263,82 @@
       "count": 1
     }
   },
+  "src/components/Settings/RouterSettings/Fallbacks/Fallbacks.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
   "src/components/Settings/RouterSettings/Fallbacks/Fallbacks.tsx": {
+    "@typescript-eslint/ban-ts-comment": {
+      "count": 1
+    },
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "prefer-const": {
       "count": 2
     }
   },
   "src/components/Teams.test.tsx": {
-    "max-nested-callbacks": {
-      "count": 4
+    "@typescript-eslint/no-explicit-any": {
+      "count": 15
     }
   },
   "src/components/Teams.tsx": {
-    "local/no-complex-jsx-arrow": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 3
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 2
     },
     "prefer-const": {
       "count": 2
     }
   },
-  "src/components/TeamsPage/teamTableColumns.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/TeamsPage/TeamsTable.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/UsagePage/utils/value_formatters.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/UIAccessControlForm.unit.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/VirtualKeysPage/keyTableColumns.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/UsagePage/components/EntityUsage/TopKeyView.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/components/UsagePage/components/KeyModelUsageView.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/components/UserBanner.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/components/VirtualKeysPage/VirtualKeysTable.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/activity_metrics.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/activity_metrics.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/add_model/AddModelForm.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/add_model/ComplexityRouterConfig.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
@@ -1375,143 +1347,73 @@
       "count": 1
     }
   },
+  "src/components/add_model/SemanticKeywordMatching.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
   "src/components/add_model/add_auto_router_tab.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/add_model_modes.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/advanced_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/auto_router_connection_test.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/cache_control_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/conditional_public_model_name.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/handle_add_auto_router_submit.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/add_model/handle_add_model_submit.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
   "src/components/add_model/litellm_model_name.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/add_model/model_connection_test.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
     }
   },
-  "src/components/add_model/provider_specific_fields.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
+  "src/components/add_model/model_connection_test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 3
-    },
+    }
+  },
+  "src/components/add_model/provider_specific_fields.tsx": {
     "react-hooks/immutability": {
       "count": 3
     }
   },
-  "src/components/add_pass_through.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/agent_management/AgentSelector.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/agent_management/AgentSelector.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
     "prefer-const": {
       "count": 1
     }
   },
   "src/components/alerting/alerting_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "prefer-const": {
       "count": 1
     }
   },
   "src/components/alerting/dynamic_form.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/bulk_create_users_button.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/callback_info_helpers.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/chat/KeysPanel.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/chat/MCPAppsPanel.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 4
-    }
-  },
-  "src/components/chat/MCPConnectPicker.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/chat/MCPCredentialsTab.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/chat/UsagePanel.tsx": {
-    "no-nested-ternary": {
+  "src/components/chat_ui/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 2
-    }
-  },
-  "src/components/chat_ui/mode_endpoint_mapping.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
     }
   },
   "src/components/claude_code_plugins/MakeSkillPublicForm.tsx": {
@@ -1519,18 +1421,7 @@
       "count": 1
     }
   },
-  "src/components/claude_code_plugins/skill_detail.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/components/cloudzero_export_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-restricted-syntax": {
-      "count": 3
-    },
     "react-hooks/immutability": {
       "count": 1
     }
@@ -1555,208 +1446,244 @@
       "count": 1
     }
   },
-  "src/components/common_components/budget_duration_dropdown.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/common_components/PremiumLoggingSettings.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
-  "src/components/common_components/check_openapi_schema.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/common_components/simple_table.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/common_components/team_dropdown.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/common_components/team_multi_select.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/common_components/user_search_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/common_components/RouterSettingsAccordion.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 14
     }
   },
   "src/components/constants.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/components/edit_auto_router/edit_auto_router_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "react-hooks/immutability": {
       "count": 1
     }
   },
   "src/components/email_events/email_event_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/immutability": {
       "count": 1
     }
   },
   "src/components/email_settings.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "prefer-const": {
+      "count": 1
+    }
+  },
+  "src/components/guardrails/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/key_info_utils.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/key_info_utils.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/components/key_team_helpers/TagRateLimitEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/key_team_helpers/fetch_available_models_team_key.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "prefer-const": {
-      "count": 1
-    }
-  },
-  "src/components/key_team_helpers/key_list.tsx": {
-    "local/filename-pascal-case": {
       "count": 1
     }
   },
   "src/components/key_team_helpers/transform_key_info.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/key_value_input.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/leftnav.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/leftnav.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/llm_calls/chat_completion.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     },
     "prefer-const": {
       "count": 1
     }
   },
-  "src/components/llm_calls/fetch_models.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/llm_calls/code_interpreter_handler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/components/llm_calls/mcp_tool_blocks.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/llm_calls/responses_api.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-params": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/components/logs/audit/AuditLogDrawer/AuditLogDrawer.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/components/logs/detail/JsonViewer.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/logging_settings_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/logs/detail/LogDetailContent.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
     }
   },
   "src/components/logs/detail/LogDetailsDrawer.tsx": {
-    "no-nested-ternary": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
     },
     "react-hooks/set-state-in-effect": {
       "count": 2
     }
   },
-  "src/components/logs/detail/sections/EvalViewer/EvalViewer.tsx": {
-    "no-nested-ternary": {
+  "src/components/logs/detail/PrettyMessagesView.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/logs/detail/RealtimePrettyView.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    }
+  },
+  "src/components/logs/detail/sections/GuardrailViewer/BedrockGuardrailDetails.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/logs/detail/sections/GuardrailViewer/BedrockGuardrailDetails.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/logs/detail/sections/GuardrailViewer/CompliancePanel.tsx": {
-    "no-nested-ternary": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/logs/detail/sections/GuardrailViewer/ContentFilterDetails.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/components/logs/detail/sections/GuardrailViewer/GuardrailViewer.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/logs/detail/sections/GuardrailViewer/GuardrailViewer.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/components/logs/detail/sections/GuardrailViewer/PresidioDetectedEntities.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/logs/detail/sections/ToolsSection/FormattedToolView.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/logs/detail/sections/ToolsSection/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 3
     }
   },
-  "src/components/mcp_server_management/MCPToolPermissions.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
+  "src/components/logs/detail/sections/ToolsSection/utils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/components/logs/detail/sections/ToolsSection/utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/components/logs/detail/utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/components/logs/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/components/mcp_server_management/MCPServerSelector.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     }
   },
   "src/components/mcp_tools/MCPToolArgumentsForm.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/mcp_tools/McpCrudPermissionPanel.tsx": {
-    "no-nested-ternary": {
-      "count": 3
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
     }
   },
   "src/components/mcp_tools/types.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
     }
   },
-  "src/components/model_add/reuse_credentials.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/model_dashboard/HealthCheckComponent.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/components/model_dashboard/ModelSettingsModal/ModelSettingsModal.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/components/model_dashboard/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     }
   },
   "src/components/model_filters.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/model_group_alias_settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
+    }
+  },
+  "src/components/model_info_view.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/model_info_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
     },
     "prefer-const": {
       "count": 5
@@ -1765,356 +1692,242 @@
       "count": 1
     }
   },
-  "src/components/molecules/cost_optimization_feedback_banner.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/navbar.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/navbar.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/networking.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 33
     }
   },
   "src/components/networking.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
-    },
-    "max-params": {
-      "count": 15
-    },
-    "no-nested-ternary": {
-      "count": 5
-    },
-    "no-restricted-syntax": {
-      "count": 140
+    "@typescript-eslint/no-explicit-any": {
+      "count": 106
     },
     "prefer-const": {
-      "count": 29
-    }
-  },
-  "src/components/object_permissions_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/onboarding_link.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+      "count": 28
     }
   },
   "src/components/organisms/create_key_button.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     },
     "prefer-const": {
       "count": 2
-    },
-    "react-hooks/set-state-in-effect": {
-      "count": 4
     }
   },
-  "src/components/organization/organization_view.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/organisms/utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/page_utils.test.ts": {
-    "max-nested-callbacks": {
+  "src/components/organization/organization_view.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/components/organization/organization_view.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 3
     }
   },
   "src/components/pass_through_info.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/per_user_usage.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/permissions/MCPServerPermissions.tsx": {
-    "no-nested-ternary": {
-      "count": 3
+  "src/components/permissions/AgentPermissions.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
-  "src/components/policies/PolicySelector.tsx": {
-    "no-nested-ternary": {
+  "src/components/permissions/VectorStorePermissions.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/price_data_reload.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/policies/types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/provider_info_helpers.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     }
   },
   "src/components/provider_info_helpers.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     },
     "prefer-const": {
       "count": 3
     }
   },
-  "src/components/public_model_hub.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
+  "src/components/router_settings/LatencyBasedConfiguration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
-  "src/components/query_param_input.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/route_preview.tsx": {
-    "local/filename-pascal-case": {
+  "src/components/router_settings/LatencyBasedConfiguration.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/router_settings/ReliabilityRetriesSection.tsx": {
-    "no-nested-ternary": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/router_settings/RouterSettingsForm.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/router_settings/RoutingStrategySelector.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/components/router_settings/TagFilteringToggle.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/router_settings/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "prefer-const": {
       "count": 2
     }
   },
   "src/components/routing_groups/index.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/preserve-manual-memoization": {
       "count": 1
     }
   },
-  "src/components/search_tools/SearchToolSelector.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
   "src/components/settings.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 2
+    "@typescript-eslint/no-explicit-any": {
+      "count": 13
     },
     "prefer-const": {
       "count": 4
     }
   },
+  "src/components/shared/advanced_date_picker.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
   "src/components/shared/advanced_date_picker.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 3
     }
   },
-  "src/components/shared/chart_loader.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/area_chart.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/bar_chart.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/chart_legend.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/chart_tooltip.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/donut_chart.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/charts/line_chart.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/components/shared/errorUtils.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/form/FormField.tsx": {
-    "local/no-complex-jsx-arrow": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/shared/numerical_input.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/cell_tooltip.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/date_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/id_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/identity_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/models_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/money_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/spend_budget_cell.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/shared/table_cells/status_badge.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/components/tag_management/types.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/components/team/EditMembership.tsx": {
-    "no-nested-ternary": {
+  "src/components/team/EditLoggingSettings.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/components/team/LoggingSettings.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
+    }
+  },
+  "src/components/team/TeamInfo.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 56
     }
   },
   "src/components/team/TeamInfo.tsx": {
-    "max-lines": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 3
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/team/TeamMemberTab.tsx": {
-    "local/no-complex-jsx-arrow": {
-      "count": 1
+  "src/components/team/TeamMemberTab.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
-  "src/components/team/TeamVirtualKeysTable.tsx": {
-    "no-nested-ternary": {
-      "count": 1
+  "src/components/team/TeamVirtualKeysTable.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
     }
   },
   "src/components/team/member_permissions.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/team/permission_definitions.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+  "src/components/templates/KeyInfoView.handleKeyUpdate.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 45
     }
   },
-  "src/components/team/useMyTeamMember.ts": {
-    "no-restricted-syntax": {
+  "src/components/templates/key_edit_view.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "src/components/templates/key_edit_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/components/templates/key_info_view.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
     }
   },
   "src/components/templates/key_info_view.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "max-lines": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/components/ui/slider.tsx": {
-    "no-nested-ternary": {
-      "count": 1
-    }
-  },
-  "src/components/update_model_credentials_modal.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
   "src/components/user_agent_activity.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/components/vector_store_management/types.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/vector_store_providers.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    }
-  },
-  "src/components/view_model/model_name_display.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
     }
   },
   "src/components/view_user_spend.tsx": {
-    "local/filename-pascal-case": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     },
     "prefer-const": {
@@ -2125,53 +1938,45 @@
     }
   },
   "src/contexts/AuthContext.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
-  "src/contexts/ThemeContext.tsx": {
-    "no-restricted-syntax": {
+  "src/hooks/policies/useDeletePolicyAttachment.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/hooks/policies/useDeletePolicyAttachment.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
-  "src/data/claimsCompliancePrompts.ts": {
-    "max-params": {
-      "count": 1
-    }
-  },
-  "src/data/codeExecutionCompliancePrompts.ts": {
-    "max-params": {
-      "count": 1
-    }
-  },
-  "src/data/compliancePrompts.ts": {
-    "max-params": {
-      "count": 1
+  "src/hooks/useMcpOAuthFlow.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
     }
   },
   "src/hooks/useMcpOAuthFlow.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/hooks/useTestMCPConnection.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
-    "no-nested-ternary": {
-      "count": 1
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
     },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
   "src/hooks/useToolsOAuthFlow.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/refs": {
       "count": 1
     },
@@ -2180,19 +1985,59 @@
     }
   },
   "src/hooks/useUserMcpOAuthFlow.tsx": {
-    "local/filename-pascal-case": {
-      "count": 1
-    },
     "react-hooks/set-state-in-effect": {
       "count": 1
     }
   },
+  "src/lib/http/client.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/utils/cookieUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
   "src/utils/dataUtils.test.ts": {
-    "max-nested-callbacks": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/utils/dataUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/utils/jwtUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/utils/localStorageUtils.test.ts": {
+    "@typescript-eslint/ban-ts-comment": {
+      "count": 3
+    }
+  },
+  "src/utils/proxyUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/utils/textUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/utils/textUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
       "count": 1
     }
   },
   "tests/CreateKeyPage.expiredToken.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    },
     "@typescript-eslint/no-require-imports": {
       "count": 3
     },
@@ -2201,6 +2046,9 @@
     }
   },
   "tests/setupTests.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
     "@typescript-eslint/no-this-alias": {
       "count": 1
     }

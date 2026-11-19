@@ -1,0 +1,110 @@
+"use client";
+
+import type { ComponentProps } from "react";
+import { CheckIcon, MinusIcon } from "lucide-react";
+import { cn } from "@/lib/cva.config";
+import { field, mono, paper } from "./surfaces";
+
+export interface ComparisonOption {
+  id: string;
+  name: string;
+  headline: string;
+  traits: readonly (string | false)[];
+}
+
+export function ComparisonCard({
+  traitLabels,
+  options,
+  recommendedId,
+  reason,
+  className,
+  ...props
+}: Omit<
+  ComponentProps<"div">,
+  "children" | "traitLabels" | "options" | "recommendedId" | "reason"
+> & {
+  traitLabels: readonly string[];
+  options: readonly ComparisonOption[];
+  recommendedId: string;
+  reason: string;
+}) {
+  return (
+    <div
+      data-slot="comparison-card"
+      className={cn(
+        paper,
+        "@container flex w-full max-w-md flex-col gap-3 rounded-2xl p-4",
+        className,
+      )}
+
+      {...props}
+    >
+      <div className="flex flex-col gap-2 @min-[22rem]:flex-row">
+        {options.map((option) => {
+          const recommended = option.id === recommendedId;
+          return (
+            <div
+              key={option.id}
+              className={cn(
+                "flex min-w-0 flex-1 flex-col gap-2 rounded-xl p-3 transition-colors",
+                recommended ? "bg-primary/[0.07] bg-primary/10" : field,
+              )}
+            >
+              <div className="flex flex-col gap-0.5">
+                <span className="flex flex-wrap items-baseline gap-1.5">
+                  <span className="wrap-anywhere text-sm font-medium">
+                    {option.name}
+                  </span>
+                  {recommended && (
+                    <span
+                      className={cn(
+                        mono,
+                        "shrink-0 text-primary text-primary",
+                      )}
+                    >
+                      pick
+                    </span>
+                  )}
+                </span>
+                <span className="text-muted-foreground wrap-anywhere text-xs">
+                  {option.headline}
+                </span>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                {traitLabels.map((label, i) => {
+                  const trait = option.traits[i];
+                  const absent = !trait;
+                  return (
+                    <span
+                      key={`${i}-${label}`}
+                      className="flex items-center gap-1.5 text-xs"
+                    >
+                      {absent ? (
+                        <MinusIcon className="text-muted-foreground size-3 shrink-0" />
+                      ) : (
+                        <CheckIcon className="size-3 shrink-0 text-success" />
+                      )}
+                      <span
+                        className={cn(
+                          "min-w-0 wrap-anywhere",
+                          absent
+                            ? "text-muted-foreground"
+                            : "text-foreground/65",
+                        )}
+                      >
+                        {absent ? label : trait}
+                      </span>
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <p className="text-muted-foreground text-xs leading-relaxed">{reason}</p>
+    </div>
+  );
+}

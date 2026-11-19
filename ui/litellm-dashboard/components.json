@@ -17,5 +17,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks",
     "utils": "@/lib/cva.config"
+  },
+  "registries": {
+    "@forai": "http://127.0.0.1:4173/r/0.1.0/{name}.json"
   }
 }

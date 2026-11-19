@@ -1,0 +1,208 @@
+/* Adapted from reference/ui-main/zhaoxi-theme/zhaoxi_theme_tokens.css.
+   Five color families, each with paired light/dark values. Vermilion is the default.
+   Only changed or unique tokens are declared; all other values inherit from base. */
+@layer brand {
+  :root[data-design-theme="zhaosie"],
+  [data-design-theme="zhaosie"][data-theme-preview],
+  .zhaosie-theme {
+    --input: var(--border);
+    --ring: var(--primary);
+    --accent: var(--primary-soft);
+    --accent-foreground: var(--primary-text);
+    --sidebar-accent: var(--accent);
+    --sidebar-ring: var(--ring);
+    --recording: var(--danger);
+    --recording-foreground: var(--danger-foreground);
+    --record-preview: var(--muted);
+    --record-device: var(--canvas);
+    --record-device-border: var(--border);
+    --record-overlay: color-mix(in srgb, var(--foreground) 30%, transparent);
+    --record-button-shadow: 0 14px 36px color-mix(in srgb, var(--primary) 15%, transparent);
+    --record-active-shadow: 0 14px 36px color-mix(in srgb, var(--danger) 15%, transparent);
+    --record-panel-max-width: calc(var(--spacing) * 160);
+    --record-panel-shadow: 0 16px 45px rgba(55,47,36,.05);
+    --record-device-shadow: 0 25px 90px rgba(69,56,42,.13);
+    --success: light-dark(#437654, #90bba0);
+    --success-foreground: light-dark(#ffffff, #15241a);
+    --success-text: light-dark(#315f42, #bee3c8);
+    --success-content: light-dark(#365542, #dfede3);
+    --success-soft: light-dark(#e5f1e8, #253f31);
+    --success-border: light-dark(#c8decb, #425d4c);
+    --warning: light-dark(#92641e, #d6b374);
+    --warning-foreground: light-dark(#ffffff, #271e10);
+    --warning-text: light-dark(#78511b, #eed49f);
+    --warning-content: light-dark(#665028, #f8e9c8);
+    --warning-soft: light-dark(#f7eed9, #433626);
+    --warning-border: light-dark(#e8d7af, #6a5638);
+    --danger: light-dark(#a64c46, #d58e88);
+    --danger-foreground: light-dark(#ffffff, #281c1b);
+    --danger-text: light-dark(#8a3c36, #efc0b8);
+    --danger-content: light-dark(#71403b, #f7dedb);
+    --danger-soft: light-dark(#f9e8e5, #432e2e);
+    --danger-border: light-dark(#ebcbc6, #754a49);
+  }
+
+  :root[data-design-theme="zhaosie"]:not([data-theme-preset]),
+  [data-design-theme="zhaosie"][data-theme-preview]:not([data-theme-preset]),
+  .zhaosie-theme:not([data-theme-preset]),
+  :root[data-design-theme="zhaosie"][data-theme-preset="red"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme-preset="red"],
+  .zhaosie-theme[data-theme-preset="red"] {
+    --background: light-dark(#f9f3ed, #201919);
+    --foreground: light-dark(#423630, #ede2da);
+    --card: light-dark(#fffcf8, #2e2222);
+    --muted: light-dark(#f5ece6, #392b29);
+    --muted-foreground: light-dark(#8a7b74, #bfafa6);
+    --faint: light-dark(#ad9e94, #948079);
+    --border: light-dark(#e9ddd4, #4d3935);
+    --leaf: light-dark(#947e74, #be9f91);
+    --illustration: light-dark(#d3c3b5, #82655f);
+    --sidebar: light-dark(#faf4ed, #251c1b);
+    --canvas: light-dark(#efe7e1, #181313);
+    --primary: light-dark(#a94e46, #d58b7c);
+    --primary-foreground: light-dark(#ffffff, #281815);
+    --primary-text: light-dark(#8b4038, #f2bbae);
+    --primary-content: light-dark(#693a32, #f5dbd6);
+    --primary-soft: light-dark(#f8e7e2, #482e2a);
+    --primary-border: light-dark(#eac7c0, #75524b);
+    --secondary-strong: light-dark(#796759, #c0a59a);
+    --secondary-strong-foreground: light-dark(#ffffff, #261d1b);
+    --secondary-foreground: light-dark(#635244, #e2cfc4);
+    --secondary-content: light-dark(#55463d, #f0e5de);
+    --secondary: light-dark(#f2ebe3, #403330);
+    --secondary-border: light-dark(#e4d7ca, #66524b);
+  }
+
+  :root[data-design-theme="zhaosie"][data-theme-preset="paper"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme-preset="paper"],
+  .zhaosie-theme[data-theme-preset="paper"] {
+    --background: light-dark(#f7f4ed, #151c1b);
+    --foreground: light-dark(#343732, #e3e7df);
+    --card: light-dark(#fffcf7, #202a27);
+    --muted: light-dark(#f3efe8, #26322e);
+    --muted-foreground: light-dark(#929087, #a5b4aa);
+    --faint: light-dark(#aaa79f, #74877c);
+    --border: light-dark(#eae5da, #34433c);
+    --leaf: light-dark(#858e7c, #a0b9a5);
+    --illustration: light-dark(#c7c5b5, #647f73);
+    --sidebar: light-dark(#f8f5ee, #18221e);
+    --canvas: light-dark(#e9e7e0, #101715);
+    --primary: #a65e55;
+    --primary-foreground: #ffffff;
+    --primary-text: light-dark(#8b4941, #f1c1b9);
+    --primary-content: light-dark(#60413a, #f6ddda);
+    --primary-soft: light-dark(#f4e7e0, #3c2a29);
+    --primary-border: light-dark(#e6c9c0, #704640);
+    --secondary-strong: light-dark(#677568, #a5b7ab);
+    --secondary-strong-foreground: light-dark(#ffffff, #1a2721);
+    --secondary-foreground: light-dark(#505f52, #cfded3);
+    --secondary-content: light-dark(#405347, #e7f0ea);
+    --secondary: light-dark(#edf0ea, #2b3a32);
+    --secondary-border: light-dark(#d8e0d6, #465c4d);
+  }
+
+  :root[data-design-theme="zhaosie"][data-theme-preset="green"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme-preset="green"],
+  .zhaosie-theme[data-theme-preset="green"] {
+    --background: light-dark(#f2f5ee, #141f19);
+    --foreground: light-dark(#2e3d32, #e1eae0);
+    --card: light-dark(#fcfdf9, #1e2d24);
+    --muted: light-dark(#eaf0e7, #29392e);
+    --muted-foreground: light-dark(#778177, #a7b9aa);
+    --faint: light-dark(#9aa499, #7e9483);
+    --border: light-dark(#dce5d8, #3c4d3f);
+    --leaf: light-dark(#75957c, #91ac92);
+    --illustration: light-dark(#bdccb8, #687f69);
+    --sidebar: light-dark(#f1f5ef, #18251c);
+    --canvas: light-dark(#e7ece4, #101a14);
+    --primary: light-dark(#456e55, #94bba0);
+    --primary-foreground: light-dark(#ffffff, #16231c);
+    --primary-text: light-dark(#365a43, #c2dfc9);
+    --primary-content: light-dark(#314f3b, #e0eee3);
+    --primary-soft: light-dark(#e4f0e6, #2a4534);
+    --primary-border: light-dark(#c8ddcd, #486651);
+    --secondary-strong: light-dark(#647a65, #a4bca9);
+    --secondary-strong-foreground: light-dark(#ffffff, #1a2a21);
+    --secondary-foreground: light-dark(#4f6451, #d0e0d3);
+    --secondary-content: light-dark(#425745, #e8f1e9);
+    --secondary: light-dark(#e9efe7, #314235);
+    --secondary-border: light-dark(#d0dfce, #506353);
+  }
+
+  :root[data-design-theme="zhaosie"][data-theme-preset="blue"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme-preset="blue"],
+  .zhaosie-theme[data-theme-preset="blue"] {
+    --background: light-dark(#f0f3f7, #161e27);
+    --foreground: light-dark(#303d49, #e1e9f2);
+    --card: light-dark(#fcfdfe, #212c38);
+    --muted: light-dark(#e8edf3, #2a3947);
+    --muted-foreground: light-dark(#73818f, #acbccb);
+    --faint: light-dark(#9daab6, #8295a6);
+    --border: light-dark(#dce3eb, #3b4c5d);
+    --leaf: light-dark(#839aa8, #94afbf);
+    --illustration: light-dark(#bdcad7, #647e96);
+    --sidebar: light-dark(#f2f6f9, #1a2530);
+    --canvas: light-dark(#e5eaf0, #111923);
+    --primary: light-dark(#436d94, #94bada);
+    --primary-foreground: light-dark(#ffffff, #152331);
+    --primary-text: light-dark(#3a6084, #bfd9ed);
+    --primary-content: light-dark(#31516e, #dfe9f5);
+    --primary-soft: light-dark(#e4edf6, #263c4d);
+    --primary-border: light-dark(#c9d8e7, #4a6679);
+    --secondary-strong: light-dark(#607687, #a2b5c5);
+    --secondary-strong-foreground: light-dark(#ffffff, #1c2a35);
+    --secondary-foreground: light-dark(#4c6071, #d1e0eb);
+    --secondary-content: light-dark(#405465, #e8f1f7);
+    --secondary: light-dark(#e9eef2, #2f4050);
+    --secondary-border: light-dark(#d3dee6, #526474);
+  }
+
+  :root[data-design-theme="zhaosie"][data-theme-preset="cyan"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme-preset="cyan"],
+  .zhaosie-theme[data-theme-preset="cyan"] {
+    --background: light-dark(#eef6f3, #121f22);
+    --foreground: light-dark(#2a3e40, #e0ecea);
+    --card: light-dark(#fbfefc, #1d2d30);
+    --muted: light-dark(#e5f0ed, #293c3f);
+    --muted-foreground: light-dark(#71868a, #acc4c0);
+    --faint: light-dark(#9cafb0, #809c99);
+    --border: light-dark(#d8e6e4, #3a5052);
+    --leaf: light-dark(#7fa3a1, #91bbb4);
+    --illustration: light-dark(#b7d0c9, #678d88);
+    --sidebar: light-dark(#f0f7f4, #182629);
+    --canvas: light-dark(#e3eeeb, #0d181a);
+    --primary: light-dark(#377d82, #88bdbb);
+    --primary-foreground: light-dark(#ffffff, #152528);
+    --primary-text: light-dark(#316f74, #bce0db);
+    --primary-content: light-dark(#27575b, #dcf0ec);
+    --primary-soft: light-dark(#e1f1f0, #254347);
+    --primary-border: light-dark(#c1dbd9, #4a6668);
+    --secondary-strong: light-dark(#567b7a, #98b8b3);
+    --secondary-strong-foreground: light-dark(#ffffff, #1a2c2d);
+    --secondary-foreground: light-dark(#426463, #d3e7e0);
+    --secondary-content: light-dark(#355453, #e9f4f0);
+    --secondary: light-dark(#e7f0ee, #2e4243);
+    --secondary-border: light-dark(#ccdeda, #4f6766);
+  }
+
+  /* Shadow geometry uses appearance selectors; light-dark() only accepts colors. */
+  :root[data-design-theme="zhaosie"][data-theme="dark"],
+  [data-design-theme="zhaosie"][data-theme-preview][data-theme="dark"],
+  :root[data-theme="dark"] [data-design-theme="zhaosie"][data-theme-preview][data-follow-appearance],
+  .zhaosie-theme[data-theme="dark"],
+  :root[data-theme="dark"] .zhaosie-theme:not([data-theme]) {
+    --record-panel-shadow: 0 18px 70px rgba(0,0,0,.19);
+    --record-device-shadow: 0 28px 95px rgba(0,0,0,.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root[data-design-theme="zhaosie"]:not([data-theme="light"]),
+    [data-design-theme="zhaosie"][data-theme-preview][data-theme="system"],
+    [data-design-theme="zhaosie"][data-theme-preview]:not([data-theme]):not([data-follow-appearance]),
+    .zhaosie-theme[data-theme="system"],
+    :root:not([data-theme="light"]) .zhaosie-theme:not([data-theme]) {
+      --record-panel-shadow: 0 18px 70px rgba(0,0,0,.19);
+      --record-device-shadow: 0 28px 95px rgba(0,0,0,.45);
+    }
+  }
+}

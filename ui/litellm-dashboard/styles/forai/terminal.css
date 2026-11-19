@@ -1,0 +1,272 @@
+@layer theme {
+  /* Rebind aliases at preview/frame boundaries so local brand and font overrides apply. */
+  :root, [data-theme-preview], [data-slot="terminal-frame"], [data-slot="terminal-block"] {
+    --terminal-background: var(--card);
+    --terminal-foreground: var(--card-foreground);
+    --terminal-muted: color-mix(in srgb, var(--muted-foreground) 80%, var(--terminal-foreground));
+    --terminal-border: var(--border);
+    --terminal-focus: var(--ring);
+    --terminal-cursor: var(--primary);
+    --terminal-cursor-accent: var(--primary-foreground);
+    --terminal-selection-background: var(--primary);
+    --terminal-selection-foreground: var(--primary-foreground);
+    --terminal-selection-inactive-background: color-mix(in srgb, var(--primary) 90%, var(--card));
+    --terminal-scrollbar: color-mix(in srgb, var(--muted-foreground) 35%, transparent);
+    --terminal-scrollbar-hover: color-mix(in srgb, var(--muted-foreground) 55%, transparent);
+    --terminal-scrollbar-active: color-mix(in srgb, var(--muted-foreground) 75%, transparent);
+    --terminal-warning: var(--warning);
+    --terminal-error: var(--destructive);
+    --terminal-font-family: var(--font-mono, var(--forai-font-mono, var(--font-geist-mono, ui-monospace, monospace)));
+    --terminal-font-size: var(--text-xs);
+    --terminal-line-height: var(--text-xs--line-height);
+    --terminal-accent: var(--primary);
+    --terminal-header-background: color-mix(in srgb, var(--terminal-accent) 6%, var(--terminal-background));
+    --terminal-header-border: color-mix(in srgb, var(--terminal-accent) 22%, var(--terminal-border));
+    --terminal-status-background: color-mix(in srgb, var(--terminal-accent) 3%, var(--terminal-background));
+    --terminal-padding-inline: calc(var(--spacing) * 4);
+    --terminal-padding-block: calc(var(--spacing) * 3);
+    --terminal-header-padding-block: calc(var(--spacing) * 2);
+    --terminal-status-padding-block: calc(var(--spacing) * 2);
+    --terminal-gap: calc(var(--spacing) * 2);
+    --terminal-status-starting: var(--theme-blue);
+    --terminal-status-running: color-mix(in srgb, var(--primary) 85%, var(--terminal-foreground));
+    --terminal-status-stopping: color-mix(in srgb, var(--warning) 85%, var(--terminal-foreground));
+    --terminal-status-done: color-mix(in srgb, var(--success) 85%, var(--terminal-foreground));
+    --terminal-status-ended: var(--theme-teal);
+    --terminal-status-failed: var(--destructive);
+    --terminal-status-unknown: var(--theme-violet);
+    --terminal-status-cancelled: color-mix(in srgb, var(--terminal-foreground) 75%, var(--terminal-background));
+
+    /* ANSI roles apply to foreground AND background. Black and white keep their meaning. */
+    --terminal-ansi-black: #14161a;
+    --terminal-ansi-red: light-dark(#b91c1c, #f87171);
+    --terminal-ansi-green: light-dark(#15803d, #4ade80);
+    --terminal-ansi-yellow: light-dark(#a16207, #fbbf24);
+    --terminal-ansi-blue: light-dark(#1d4ed8, #60a5fa);
+    --terminal-ansi-magenta: light-dark(#a21caf, #e879f9);
+    --terminal-ansi-cyan: light-dark(#0e7490, #22d3ee);
+    --terminal-ansi-white: #dce0e7;
+    --terminal-ansi-bright-black: #626670;
+    --terminal-ansi-bright-red: light-dark(#dc2626, #fca5a5);
+    --terminal-ansi-bright-green: light-dark(#16843c, #86efac);
+    --terminal-ansi-bright-yellow: light-dark(#a66a00, #fde047);
+    --terminal-ansi-bright-blue: light-dark(#2563eb, #93c5fd);
+    --terminal-ansi-bright-magenta: light-dark(#c026d3, #f0abfc);
+    --terminal-ansi-bright-cyan: light-dark(#087d93, #67e8f9);
+    --terminal-ansi-bright-white: #ffffff;
+  }
+}
+
+@layer theme {
+  :is([data-slot="terminal-frame"], [data-slot="terminal-block"])[data-variant="ink"] {
+    --terminal-background: light-dark(var(--foreground), var(--popover));
+    --terminal-foreground: light-dark(var(--background), var(--foreground));
+    --terminal-muted: color-mix(in srgb, var(--terminal-foreground) 72%, var(--terminal-background));
+    --terminal-accent: light-dark(color-mix(in srgb, var(--primary) 45%, white), var(--primary));
+    --terminal-border: color-mix(in srgb, var(--terminal-foreground) 18%, var(--terminal-background));
+    --terminal-warning: light-dark(#fbbf24, var(--warning));
+    --terminal-error: light-dark(#f87171, var(--destructive));
+    --terminal-status-starting: light-dark(#93c5fd, var(--theme-blue));
+    --terminal-status-running: var(--terminal-accent);
+    --terminal-status-stopping: var(--terminal-warning);
+    --terminal-status-done: light-dark(#86efac, var(--success));
+    --terminal-status-ended: light-dark(#5eead4, var(--theme-teal));
+    --terminal-status-failed: var(--terminal-error);
+    --terminal-status-unknown: light-dark(#c4b5fd, var(--theme-violet));
+    --terminal-status-cancelled: var(--terminal-muted);
+    --terminal-ansi-red: #f87171;
+    --terminal-ansi-green: #4ade80;
+    --terminal-ansi-yellow: #fbbf24;
+    --terminal-ansi-blue: #60a5fa;
+    --terminal-ansi-magenta: #e879f9;
+    --terminal-ansi-cyan: #22d3ee;
+    --terminal-ansi-bright-red: #fca5a5;
+    --terminal-ansi-bright-green: #86efac;
+    --terminal-ansi-bright-yellow: #fde047;
+    --terminal-ansi-bright-blue: #93c5fd;
+    --terminal-ansi-bright-magenta: #f0abfc;
+    --terminal-ansi-bright-cyan: #67e8f9;
+  }
+}
+
+@layer components {
+  .terminal-frame, .terminal-header, .terminal-viewport, .terminal-status {
+    box-sizing: border-box;
+  }
+
+  .forai-terminal-theme {
+    font-family: var(--terminal-font-family);
+    font-size: var(--terminal-font-size);
+    line-height: var(--terminal-line-height);
+  }
+
+  .terminal-frame {
+    color: var(--terminal-foreground);
+    background: var(--terminal-background);
+    border-color: var(--terminal-border);
+    font-family: var(--terminal-font-family);
+    font-size: var(--terminal-font-size);
+    line-height: var(--terminal-line-height);
+    overflow: hidden;
+  }
+
+  .terminal-frame[data-layout="standalone"] {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: calc(var(--radius) * 1.8);
+  }
+
+  .terminal-frame[data-layout="embedded"] {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .terminal-header {
+    display: flex;
+    max-height: 40%;
+    align-items: center;
+    gap: var(--terminal-gap);
+    padding: var(--terminal-header-padding-block) var(--terminal-padding-inline);
+    border-bottom: 1px solid var(--terminal-header-border);
+    background: var(--terminal-header-background);
+  }
+
+  .terminal-heading-icon {
+    color: var(--terminal-accent);
+  }
+
+  [data-slot="terminal-header-content"], [data-slot="terminal-actions"] {
+    gap: var(--terminal-gap);
+  }
+
+  .terminal-frame[data-layout="embedded"] > .terminal-header {
+    max-height: 35%;
+  }
+
+  .terminal-viewport[data-scroll="content"] {
+    padding: var(--terminal-padding-block) var(--terminal-padding-inline);
+  }
+
+  .terminal-viewport[data-scroll="engine"] {
+    padding: 0;
+  }
+
+  .terminal-viewport[data-scroll="engine"] > .xterm {
+    box-sizing: border-box;
+    height: 100%;
+    padding: var(--terminal-padding-block) var(--terminal-padding-inline);
+    background-color: var(--terminal-background);
+    color: var(--terminal-foreground);
+  }
+
+  /* Include vendor engine CSS in the components layer so these scoped roles win. */
+  .terminal-viewport[data-scroll="engine"] .xterm :is(.xterm-viewport, .composition-view) {
+    background-color: var(--terminal-background);
+    color: var(--terminal-foreground);
+  }
+
+  .terminal-status {
+    max-height: 35%;
+    padding: var(--terminal-status-padding-block) var(--terminal-padding-inline);
+    border-top: 1px solid var(--terminal-border);
+    background: var(--terminal-status-background);
+  }
+
+  .terminal-message {
+    margin-top: var(--spacing);
+    color: var(--terminal-muted);
+  }
+  .terminal-message:first-child { margin-top: 0; }
+  .terminal-metadata { color: var(--terminal-muted); }
+  .terminal-copy { color: var(--terminal-muted); }
+  .terminal-warning { color: var(--terminal-warning); }
+  .terminal-log-cursor { background: var(--terminal-accent); }
+  .terminal-message[data-feedback="error"] { color: var(--terminal-error); }
+  .terminal-message[data-feedback="success"] { color: var(--terminal-status-done); }
+
+  .terminal-state {
+    --terminal-state-color: var(--terminal-muted);
+    display: inline-flex;
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing);
+    padding: calc(var(--spacing) * .5) calc(var(--spacing) * 1.5);
+    border: 1px solid color-mix(in srgb, var(--terminal-state-color) 35%, transparent);
+    border-radius: calc(var(--radius) * .6);
+    background: color-mix(in srgb, var(--terminal-state-color) 12%, var(--terminal-background));
+    color: var(--terminal-state-color);
+    font-weight: 500;
+  }
+  .terminal-state[data-terminal-state="starting"] { --terminal-state-color: var(--terminal-status-starting); }
+  .terminal-state[data-terminal-state="running"] { --terminal-state-color: var(--terminal-status-running); }
+  .terminal-state[data-terminal-state="stopping"] { --terminal-state-color: var(--terminal-status-stopping); }
+  .terminal-state[data-terminal-state="done"] { --terminal-state-color: var(--terminal-status-done); }
+  .terminal-state[data-terminal-state="ended"] { --terminal-state-color: var(--terminal-status-ended); }
+  .terminal-state[data-terminal-state="failed"] { --terminal-state-color: var(--terminal-status-failed); }
+  .terminal-state[data-terminal-state="unknown"] { --terminal-state-color: var(--terminal-status-unknown); }
+  .terminal-state[data-terminal-state="cancelled"] { --terminal-state-color: var(--terminal-status-cancelled); }
+
+  /* Session chrome is independent of the command log's existing badge layout. */
+  .terminal-session-header {
+    max-height: none;
+    overflow: visible;
+  }
+  .terminal-frame[data-layout="embedded"] > .terminal-session-header { max-height: none; }
+  .terminal-session-header > [data-slot="terminal-header-content"] { flex-wrap: nowrap; }
+  .terminal-session-title {
+    display: block;
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: start;
+    outline: none;
+  }
+  .terminal-session-title:focus-visible {
+    outline: 2px solid var(--terminal-focus);
+    outline-offset: 2px;
+  }
+  .terminal-session-status .terminal-state {
+    flex-wrap: nowrap;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .terminal-error-details {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: var(--terminal-status-padding-block) var(--terminal-padding-inline);
+  }
+  .terminal-error-trigger { color: var(--terminal-error); }
+
+  [data-slot="terminal-viewport"] [data-ansi-color="30"] { color: color-mix(in srgb, var(--terminal-foreground) 75%, var(--terminal-background)); }
+  [data-slot="terminal-viewport"] [data-ansi-color="31"] { color: var(--terminal-ansi-red); }
+  [data-slot="terminal-viewport"] [data-ansi-color="32"] { color: var(--terminal-ansi-green); }
+  [data-slot="terminal-viewport"] [data-ansi-color="33"] { color: var(--terminal-ansi-yellow); }
+  [data-slot="terminal-viewport"] [data-ansi-color="34"] { color: var(--terminal-ansi-blue); }
+  [data-slot="terminal-viewport"] [data-ansi-color="35"] { color: var(--terminal-ansi-magenta); }
+  [data-slot="terminal-viewport"] [data-ansi-color="36"] { color: var(--terminal-ansi-cyan); }
+  [data-slot="terminal-viewport"] [data-ansi-color="37"] { color: var(--terminal-foreground); }
+  [data-slot="terminal-viewport"] [data-ansi-color="90"] { color: var(--terminal-muted); }
+  [data-slot="terminal-viewport"] [data-ansi-color="91"] { color: var(--terminal-ansi-bright-red); }
+  [data-slot="terminal-viewport"] [data-ansi-color="92"] { color: var(--terminal-ansi-bright-green); }
+  [data-slot="terminal-viewport"] [data-ansi-color="93"] { color: var(--terminal-ansi-bright-yellow); }
+  [data-slot="terminal-viewport"] [data-ansi-color="94"] { color: var(--terminal-ansi-bright-blue); }
+  [data-slot="terminal-viewport"] [data-ansi-color="95"] { color: var(--terminal-ansi-bright-magenta); }
+  [data-slot="terminal-viewport"] [data-ansi-color="96"] { color: var(--terminal-ansi-bright-cyan); }
+  [data-slot="terminal-viewport"] [data-ansi-color="97"] { color: var(--terminal-foreground); }
+  [data-slot="terminal-viewport"] [data-stream="stderr"] { color: var(--terminal-error); }
+
+  [data-slot="terminal-viewport"] {
+    scrollbar-color: var(--terminal-scrollbar) transparent;
+  }
+  [data-slot="terminal-viewport"] ::selection {
+    color: var(--terminal-selection-foreground);
+    background: var(--terminal-selection-background);
+  }
+}

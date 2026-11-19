@@ -1,0 +1,67 @@
+@layer theme {
+  /* Root tokens include portals; local previews consume the same density presets. */
+  :root, .layout-density {
+    --layout-unit: 0.25rem;
+    --layout-font-scale: 1;
+    --layout-body-font-size: 1rem;
+    --layout-body-line-height: 1.5rem;
+    --spacing: var(--layout-unit);
+    --text-xs: calc(0.75rem * var(--layout-font-scale));
+    --text-xs--line-height: calc(var(--layout-body-line-height) - var(--spacing) * 2);
+    --text-sm: calc(0.875rem * var(--layout-font-scale));
+    --text-sm--line-height: calc(var(--layout-body-line-height) - var(--spacing));
+    --text-base: var(--layout-body-font-size);
+    --text-base--line-height: var(--layout-body-line-height);
+    --text-lg: calc(1.125rem * var(--layout-font-scale));
+    --text-lg--line-height: calc(var(--layout-body-line-height) + var(--spacing));
+    --text-xl: calc(1.25rem * var(--layout-font-scale));
+    --text-xl--line-height: calc(var(--layout-body-line-height) + var(--spacing));
+    --text-2xl: calc(1.5rem * var(--layout-font-scale));
+    --text-2xl--line-height: calc(var(--layout-body-line-height) + var(--spacing) * 2);
+    --text-3xl: calc(1.875rem * var(--layout-font-scale));
+    --text-3xl--line-height: calc(var(--layout-body-line-height) + var(--spacing) * 3);
+    --button-sm-font-size: calc(0.8rem * var(--layout-font-scale));
+    --layout-title-font-size: var(--text-xl);
+    --layout-title-line-height: var(--text-xl--line-height);
+    --layout-page-title-font-size: var(--text-3xl);
+    --layout-page-title-line-height: var(--text-3xl--line-height);
+    --layout-section-gap: calc(var(--spacing) * 6);
+    --layout-stack-gap: calc(var(--spacing) * 4);
+    --layout-inline-gap: calc(var(--spacing) * 2);
+    --layout-heading-body-gap: calc(var(--spacing) * 2);
+    --layout-paragraph-gap: calc(var(--spacing) * 3);
+    --layout-element-padding-inline: calc(var(--spacing) * 4);
+    --layout-element-padding-block: calc(var(--spacing) * 3);
+    --layout-element-margin-inline: 0px;
+    --layout-element-margin-block: calc(var(--spacing) * 2);
+    --layout-page-padding-inline: calc(var(--spacing) * 4);
+    --layout-page-padding-block: calc(var(--spacing) * 6);
+    --layout-child-padding-inline: calc(var(--spacing) * 4);
+    --layout-child-padding-block: calc(var(--spacing) * 4);
+    --layout-child-margin-inline: calc(var(--spacing) * 2);
+    --layout-child-margin-block: calc(var(--spacing) * 2);
+    --layout-list-gap: calc(var(--spacing) * 2);
+    --layout-cell-padding-inline: calc(var(--spacing) * 3);
+    --layout-cell-padding-block: calc(var(--spacing) * 2);
+    --layout-field-gap: calc(var(--spacing) * 2);
+    --layout-component-group-gap: calc(var(--spacing) * 4);
+    --card-spacing: calc(var(--spacing) * 4);
+  }
+  body, .layout-density {
+    font-size: var(--layout-body-font-size);
+    line-height: var(--layout-body-line-height);
+  }
+  :root[data-layout-density="compact"], .layout-density[data-layout-density="compact"] {
+    --layout-unit: 0.21875rem;
+    --layout-font-scale: 0.875;
+    --layout-body-font-size: 0.875rem;
+    --layout-body-line-height: 1.25rem;
+  }
+  :root[data-layout-density="comfortable"], .layout-density[data-layout-density="comfortable"] {
+    --layout-unit: 0.3125rem;
+    --layout-font-scale: 1.125;
+    --layout-body-font-size: 1.125rem;
+    --layout-body-line-height: 1.75rem;
+  }
+
+}

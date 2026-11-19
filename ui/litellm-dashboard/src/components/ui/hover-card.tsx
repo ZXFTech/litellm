@@ -2,14 +2,31 @@
 
 import { PreviewCard as PreviewCardPrimitive } from "@base-ui/react/preview-card";
 
+import type { VariantProps } from "class-variance-authority";
+
 import { cn } from "@/lib/cva.config";
+import { buttonVariants } from "@/components/ui/button";
 
 function HoverCard({ ...props }: PreviewCardPrimitive.Root.Props) {
   return <PreviewCardPrimitive.Root data-slot="hover-card" {...props} />;
 }
 
-function HoverCardTrigger({ ...props }: PreviewCardPrimitive.Trigger.Props) {
-  return <PreviewCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />;
+function HoverCardTrigger({
+  className,
+  variant,
+  size,
+  ...props
+}: PreviewCardPrimitive.Trigger.Props & VariantProps<typeof buttonVariants>) {
+  const recipe = variant != null || size != null ? buttonVariants({ variant: variant ?? "link", size }) : undefined;
+  return (
+    <PreviewCardPrimitive.Trigger
+      data-slot="hover-card-trigger"
+      className={
+        recipe ? (state) => cn(recipe, typeof className === "function" ? className(state) : className) : className
+      }
+      {...props}
+    />
+  );
 }
 
 function HoverCardContent({
@@ -33,7 +50,7 @@ function HoverCardContent({
         <PreviewCardPrimitive.Popup
           data-slot="hover-card-content"
           className={cn(
-            "z-popup w-64 origin-(--transform-origin) rounded-lg bg-popover p-4 text-sm text-popover-foreground shadow-md ring-1 ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+            "z-popup max-h-(--available-height) w-64 max-w-(--available-width) origin-(--transform-origin) overflow-y-auto rounded-lg bg-popover p-2.5 text-sm text-popover-foreground shadow-md ring-1 ring-foreground/10 outline-hidden transition-[opacity,scale] duration-100 data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0 motion-reduce:transition-none",
             className,
           )}
           {...props}

@@ -9,7 +9,7 @@ const Card = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<"di
       data-slot="card"
       data-size={size}
       className={cn(
-        "group/card flex flex-col gap-(--card-spacing) rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground shadow-xs ring-1 ring-foreground/10 [--card-spacing:--spacing(6)] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(4)] *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
+        "group/card flex min-w-0 flex-col gap-(--card-spacing) rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground shadow-xs ring-1 ring-foreground/10 [--card-spacing:--spacing(4)] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
         className,
       )}
       {...props}
@@ -24,7 +24,7 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutR
       ref={ref}
       data-slot="card-header"
       className={cn(
-        "group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)",
+        "group/card-header @container/card-header grid min-w-0 auto-rows-min items-start gap-1 rounded-t-xl px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[minmax(0,1fr)_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)",
         className,
       )}
       {...props}
@@ -38,7 +38,10 @@ const CardTitle = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRe
     <div
       ref={ref}
       data-slot="card-title"
-      className={cn("text-base leading-normal font-medium group-data-[size=sm]/card:text-sm", className)}
+      className={cn(
+        "min-w-0 text-base leading-snug font-medium wrap-anywhere group-data-[size=sm]/card:text-sm",
+        className,
+      )}
       {...props}
     />
   ),
@@ -47,7 +50,12 @@ CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<"div">>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} data-slot="card-description" className={cn("text-sm text-muted-foreground", className)} {...props} />
+    <div
+      ref={ref}
+      data-slot="card-description"
+      className={cn("min-w-0 text-sm text-muted-foreground wrap-anywhere", className)}
+      {...props}
+    />
   ),
 );
 CardDescription.displayName = "CardDescription";
@@ -66,7 +74,12 @@ CardAction.displayName = "CardAction";
 
 const CardContent = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<"div">>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} data-slot="card-content" className={cn("px-(--card-spacing)", className)} {...props} />
+    <div
+      ref={ref}
+      data-slot="card-content"
+      className={cn("min-w-0 px-(--card-spacing) wrap-anywhere", className)}
+      {...props}
+    />
   ),
 );
 CardContent.displayName = "CardContent";

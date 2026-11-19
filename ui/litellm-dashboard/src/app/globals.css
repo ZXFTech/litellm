@@ -1,14 +1,22 @@
-@layer theme, base, components, utilities;
+@layer theme, base, brand, components, utilities;
 
 @import "tailwindcss";
 @import "@litellm/lens-ui/styles.css";
-@source "../../node_modules/@litellm/lens-ui/src";
 @import "tw-animate-css";
+@import "../../styles/forai/tailwind.css";
+@import "../../styles/forai/base.css";
+@import "../../styles/forai/density.css";
+@import "../../styles/forai/motion.css";
+@import "../../styles/forai/themes/zhaosie.css";
+@import "../../styles/forai/themes/zhaosie-components.css";
+@import "../../styles/forai-overrides.css";
+
+@source "../../node_modules/@litellm/lens-ui/src";
 
 @plugin '@headlessui/tailwindcss';
 @plugin '@tailwindcss/forms';
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 /* shadcn Base UI primitives reference these variants; upstream omits them (shadcn-ui/ui#9196) */
 @custom-variant data-open (&:where([data-state="open"], [data-open]:not([data-open="false"])));
@@ -30,7 +38,7 @@
 }
 
 /* The only z-index values in the dashboard. Portalled popups (src/components/ui) own the top of the
-   scale; everything else must sit below them. Enforced by the local/no-ad-hoc-z-index ESLint rule. */
+   scale; everything else must sit below them. */
 @utility z-raised {
   z-index: 1;
 }

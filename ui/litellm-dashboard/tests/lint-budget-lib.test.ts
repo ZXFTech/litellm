@@ -27,6 +27,22 @@ describe("countBudgetViolations", () => {
     });
   });
 
+  it("includes file baselines in the budget while honoring inline exceptions", () => {
+    const report = [
+      {
+        ...file("@typescript-eslint/no-explicit-any"),
+        suppressedMessages: [
+          { ruleId: "@typescript-eslint/no-explicit-any", suppressions: [{ kind: "file" }] },
+          { ruleId: "@typescript-eslint/no-explicit-any", suppressions: [{ kind: "directive" }] },
+        ],
+      },
+    ];
+    expect(countBudgetViolations(report, budgets)).toEqual({
+      "@typescript-eslint/no-explicit-any": 2,
+      complexity: 0,
+    });
+  });
+
   it("emits keys in sorted order so the committed snapshot diffs stably", () => {
     const unsorted = { complexity: { max: 1, target: 1 }, "@typescript-eslint/no-explicit-any": { max: 1, target: 1 } };
     expect(Object.keys(countBudgetViolations([], unsorted))).toEqual([

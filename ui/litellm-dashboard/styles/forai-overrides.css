@@ -1,0 +1,27 @@
+:root {
+  --forai-font-sans: var(--font-dashboard);
+}
+
+:root[data-design-theme="zhaosie"] {
+  --background: revert-layer;
+  --foreground: revert-layer;
+  --card: revert-layer;
+  --primary: revert-layer;
+  --primary-foreground: revert-layer;
+  --secondary: revert-layer;
+  --secondary-foreground: revert-layer;
+  --muted: revert-layer;
+  --muted-foreground: revert-layer;
+  --accent: revert-layer;
+  --accent-foreground: revert-layer;
+  --success: revert-layer;
+  --success-foreground: revert-layer;
+  --warning: revert-layer;
+  --warning-foreground: revert-layer;
+  --border: revert-layer;
+  --input: revert-layer;
+  --ring: revert-layer;
+  --sidebar: revert-layer;
+  --sidebar-accent: revert-layer;
+  --sidebar-ring: revert-layer;
+}

@@ -1,0 +1,160 @@
+/* Component structure reuses the shared UI; brand token values live in globals.css. */
+.zhaosie-scope {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.zhaosie-record-button[data-slot="button"] {
+  position: relative;
+  width: min(100%, calc(var(--spacing) * 47.5));
+  height: auto;
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: var(--radius-4xl);
+  touch-action: none;
+  translate: none;
+}
+
+.zhaosie-record-button::before {
+  position: absolute;
+  inset: calc(var(--spacing) * -2);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-4xl) + var(--spacing) * 2);
+  content: "";
+  pointer-events: none;
+}
+
+.zhaosie-record-button[data-recording="true"] {
+  background: var(--destructive);
+  color: var(--background);
+}
+
+.zhaosie-waveform {
+  display: flex;
+  height: calc(var(--spacing) * 8);
+  align-items: center;
+  gap: var(--spacing);
+  color: var(--muted-foreground);
+}
+
+.zhaosie-waveform[data-active="true"] { color: var(--destructive); }
+.zhaosie-waveform > span {
+  width: var(--spacing);
+  height: calc(var(--spacing) * (1.5 + var(--level) * 4.5));
+  border-radius: var(--radius-sm);
+  background: currentColor;
+}
+
+html[data-motion="reduced"] .zhaosie-waveform > span {
+  height: calc(var(--spacing) * 3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion="full"]) .zhaosie-waveform > span {
+    height: calc(var(--spacing) * 3);
+  }
+}
+
+.zhaosie-preview-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  justify-content: flex-start;
+  gap: var(--layout-stack-gap);
+  padding: var(--layout-element-padding-block) var(--layout-element-padding-inline);
+  white-space: normal;
+  text-align: start;
+}
+
+.zhaosie-preview-icon {
+  display: grid;
+  width: calc(var(--spacing) * 9);
+  height: calc(var(--spacing) * 9);
+  flex: none;
+  place-items: center;
+  border-radius: var(--radius-lg);
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.zhaosie-record-block {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--layout-inline-gap);
+  padding: var(--layout-element-padding-block) var(--layout-element-padding-inline);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--muted);
+}
+
+.zhaosie-record-block textarea {
+  width: 100%;
+  min-height: calc(var(--spacing) * 24);
+  resize: vertical;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  padding: var(--layout-inline-gap);
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  outline: none;
+}
+
+.zhaosie-record-block textarea:focus-visible {
+  border-color: var(--ring);
+  outline: 3px solid color-mix(in oklab, var(--ring) 50%, transparent);
+}
+
+.zhaosie-record-panel[data-slot="drawer-popup"] {
+  width: min(100%, var(--record-panel-max-width));
+  margin-inline: auto;
+}
+
+.zhaosie-menu[data-slot="dialog-content"] {
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  flex-direction: column;
+  border-radius: 0;
+  padding: var(--layout-page-padding-block) var(--layout-page-padding-inline);
+  translate: none;
+}
+
+.zhaosie-menu-list { display: flex; flex-direction: column; }
+.zhaosie-menu-list > li { border-bottom: 1px solid var(--border); }
+.zhaosie-menu-item[data-slot="button"] {
+  width: 100%;
+  height: auto;
+  min-height: calc(var(--spacing) * 19);
+  justify-content: flex-start;
+  gap: var(--layout-stack-gap);
+  padding: var(--layout-element-padding-block) var(--layout-element-padding-inline);
+  white-space: normal;
+  text-align: start;
+}
+
+.zhaosie-toast {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--layout-inline-gap);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--layout-element-padding-block) var(--layout-element-padding-inline);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+}
+
+.zhaosie-toast > span { min-width: 0; overflow-wrap: anywhere; }

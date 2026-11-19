@@ -1,4 +1,3 @@
-/* eslint-disable local/no-ad-hoc-z-index -- exercises how cn merges the banned numeric classes against the tokens */
 import { describe, expect, it } from "vitest";
 import { cn } from "./cva.config";
 

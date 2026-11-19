@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
@@ -10,7 +11,7 @@ import ReactQueryProvider from "@/contexts/ReactQueryProvider";
 import HotkeysProvider from "@/contexts/HotkeysProvider";
 import { Toaster } from "@/components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-dashboard" });
 
 export const metadata: Metadata = {
   title: "LiteLLM Dashboard",
@@ -26,9 +27,19 @@ export default function RootLayout({
   return (
     // next-themes stamps the theme class on <html> before paint, which the exported markup
     // cannot predict; suppressHydrationWarning confines that mismatch to this element.
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={inter.variable} data-design-theme="zhaosie" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <Script id="forai-motion" strategy="beforeInteractive">
+          {`{
+            const preference = matchMedia("(prefers-reduced-motion: reduce)");
+            const applyMotionPreference = () => {
+              document.documentElement.dataset.motion = preference.matches ? "reduced" : "full";
+            };
+            applyMotionPreference();
+            preference.addEventListener("change", applyMotionPreference);
+          }`}
+        </Script>
+        <ThemeProvider attribute={["class", "data-theme"]} defaultTheme="light" enableSystem disableTransitionOnChange>
           <NuqsAdapter>
             <ReactQueryProvider>
               <HotkeysProvider>

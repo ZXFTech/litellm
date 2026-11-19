@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { Field as FieldPrimitive } from "@base-ui/react/field";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cva.config";
@@ -12,7 +13,7 @@ function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
     <fieldset
       data-slot="field-set"
       className={cn(
-        "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3",
+        "flex flex-col gap-4 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3",
         className,
       )}
       {...props}
@@ -29,7 +30,7 @@ function FieldLegend({
     <legend
       data-slot="field-legend"
       data-variant={variant}
-      className={cn("mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base", className)}
+      className={cn("mb-1.5 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base", className)}
       {...props}
     />
   );
@@ -40,7 +41,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-group"
       className={cn(
-        "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4",
+        "group/field-group @container/field-group flex w-full flex-col gap-5 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4",
         className,
       )}
       {...props}
@@ -48,42 +49,80 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-const fieldVariants = cva("group/field flex w-full gap-3 data-[invalid=true]:text-destructive", {
-  variants: {
-    orientation: {
-      vertical: "flex-col *:w-full [&>.sr-only]:w-auto",
-      horizontal:
-        "flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
-      responsive:
-        "flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+const fieldVariants = cva(
+  "group/field flex w-full min-w-0 gap-2 data-[invalid=true]:text-destructive data-[invalid='']:text-destructive",
+  {
+    variants: {
+      orientation: {
+        vertical: "flex-col *:w-full [&>.sr-only]:w-auto",
+        horizontal:
+          "flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+        responsive:
+          "flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+      },
+    },
+    defaultVariants: {
+      orientation: "vertical",
     },
   },
-  defaultVariants: {
-    orientation: "vertical",
-  },
-});
+);
+
+const baseUiFieldProps = [
+  "actionsRef",
+  "dirty",
+  "disabled",
+  "invalid",
+  "name",
+  "render",
+  "touched",
+  "validate",
+  "validationDebounceTime",
+  "validationMode",
+] as const satisfies readonly (keyof FieldPrimitive.Root.Props)[];
 
 function Field({
   className,
+  style,
   orientation = "vertical",
+  "data-invalid": dataInvalid,
+  "data-disabled": dataDisabled,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof fieldVariants>) {
-  return (
-    <div
-      role="group"
-      data-slot="field"
-      data-orientation={orientation}
-      className={cn(fieldVariants({ orientation }), className)}
-      {...props}
-    />
-  );
+}: FieldPrimitive.Root.Props &
+  VariantProps<typeof fieldVariants> & {
+    "data-invalid"?: boolean | "" | "true" | "false";
+    "data-disabled"?: boolean | "" | "true" | "false";
+  }) {
+  const layout = fieldVariants({ orientation });
+  const usesFieldContext = baseUiFieldProps.some((name) => name in props);
+  const invalid = dataInvalid ?? (props.invalid || undefined);
+  const disabled = dataDisabled ?? (props.disabled || undefined);
+  const elementProps = {
+    role: "group",
+    "data-slot": "field",
+    "data-orientation": orientation,
+    ...(invalid === undefined ? {} : { "data-invalid": invalid }),
+    ...(disabled === undefined ? {} : { "data-disabled": disabled }),
+    ...props,
+  };
+
+  if (usesFieldContext || typeof className === "function" || typeof style === "function") {
+    return (
+      <FieldPrimitive.Root
+        {...elementProps}
+        className={(state) => cn(layout, typeof className === "function" ? className(state) : className)}
+        style={style}
+      />
+    );
+  }
+
+  return <div {...elementProps} className={cn(layout, className)} style={style} />;
 }
 
 function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="field-content"
-      className={cn("group/field-content flex flex-1 flex-col gap-1 leading-snug", className)}
+      className={cn("group/field-content flex min-w-0 flex-1 flex-col gap-0.5 leading-snug", className)}
       {...props}
     />
   );
@@ -121,9 +160,9 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="field-description"
       className={cn(
-        "text-left text-sm leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5",
+        "text-start text-sm leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5",
         "last:mt-0 nth-last-2:-mt-1",
-        "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
+        "[&>a[href]]:cursor-pointer [&>a[aria-disabled=true]]:cursor-not-allowed [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
         className,
       )}
       {...props}
@@ -175,15 +214,14 @@ function FieldError({
       return null;
     }
 
-    const uniqueErrors = [...new Map(errors.map((error) => [error?.message, error])).values()];
-
-    if (uniqueErrors?.length == 1) {
-      return uniqueErrors[0]?.message;
-    }
+    const messages = Array.from(new Set(errors.flatMap((error) => (error?.message ? [error.message] : []))));
+    if (messages.length <= 1) return messages[0];
 
     return (
-      <ul className="ml-4 flex list-disc flex-col gap-1">
-        {uniqueErrors.map((error, index) => error?.message && <li key={index}>{error.message}</li>)}
+      <ul className="ms-4 flex list-disc flex-col gap-1">
+        {messages.map((message) => (
+          <li key={message}>{message}</li>
+        ))}
       </ul>
     );
   }, [children, errors]);
@@ -196,7 +234,7 @@ function FieldError({
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("text-sm font-normal text-destructive", className)}
+      className={cn("text-sm font-normal text-destructive wrap-anywhere", className)}
       {...props}
     >
       {content}
